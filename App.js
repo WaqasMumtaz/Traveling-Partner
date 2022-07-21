@@ -19,6 +19,8 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import SplashScreen from 'react-native-splash-screen';
+import Components from './src/Components';
+import Screens from './src/Screens';
 
 
 const Section = ({children, title}) => {
@@ -50,6 +52,21 @@ const Section = ({children, title}) => {
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
+  const screens = [
+    {
+      id:1,
+      screen:()=> <Screens.AcceptRide/>
+    },
+    {
+      id:2,
+      screen:()=> <Screens.TrackingRealtime/>
+    },
+    {
+      id:3,
+      screen:()=> <Screens.EarnMoney/>
+    },
+  ]
+
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
@@ -59,9 +76,10 @@ const App = () => {
   }, []);
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
+    <SafeAreaView style={{flex:1}}>
+      <StatusBar barStyle='dark-content' backgroundColor='#fff'/>
+      <Components.ScreensSwiper screens={screens}/>
+      {/* <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
@@ -84,7 +102,7 @@ const App = () => {
           </Section>
           <LearnMoreLinks />
         </View>
-      </ScrollView>
+      </ScrollView> */}
     </SafeAreaView>
   );
 };

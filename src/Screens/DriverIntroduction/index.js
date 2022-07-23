@@ -1,41 +1,49 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Image, TouchableOpacity } from 'react-native';
 import Components from '../../Components';
-import earn_money from '../../Assets/earn-money.png';
+import driver_intro from '../../Assets/driver-intro.png';
 import Global from '../../Global';
-import { useNavigation, } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
-
-function EarnMoney() {
+function DriverIntroduction() {
     const navigation = useNavigation();
 
     const handleNavigation=()=>{
-        navigation.navigate('Enable Location');
+        navigation.navigate('Partner Introduction');
+    }
+
+    const handleBack=()=>{
+        navigation.goBack()
     }
 
     return (
         <>
             <SafeAreaView style={{ flex: 1,backgroundColor: Global.white}}>
                 <View style={styles.logo_container}>
-                    <Components.LogoComponent src={earn_money} />
+                    <Components.LogoComponent src={driver_intro} />
                 </View>
                 <View style={styles.body}>
-                    <Components.Heading heading='Earn Money' />
+                    <Components.Heading heading='Driver Introduction' />
                     <View style={{ marginTop: 10 }}>
                         <Components.Paragraph para={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum`} />
                     </View>
                     <View style={{margin:15}}/>
                         <Components.MainButton
-                            title='get started'
+                            title='watch video'
                             handleNavigation={handleNavigation}
                         />
+                     <View style={{margin:12}}/>
+                    <Components.BackButton
+                    title='Back'
+                    handleNavigation={handleBack}
+                    />
                 </View>
             </SafeAreaView>
         </>
     )
 }
 
-export default EarnMoney;
+export default DriverIntroduction;
 
 const styles = StyleSheet.create({
     logo_container: {

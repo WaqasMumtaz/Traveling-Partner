@@ -21,9 +21,12 @@ import {
 import SplashScreen from 'react-native-splash-screen';
 import Components from './src/Components';
 import Screens from './src/Screens';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import Global from './src/Global';
+import MainNavigation from './src/Navigation';
 
 
-const Section = ({children, title}) => {
+const Section = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -49,36 +52,28 @@ const Section = ({children, title}) => {
   );
 };
 
+const MyTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: Global.white,
+  },
+};
+
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
 
-  const screens = [
-    {
-      id:1,
-      screen:()=> <Screens.AcceptRide/>
-    },
-    {
-      id:2,
-      screen:()=> <Screens.TrackingRealtime/>
-    },
-    {
-      id:3,
-      screen:()=> <Screens.EarnMoney/>
-    },
-  ]
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
 
   useEffect(() => {
     SplashScreen.hide();
   }, []);
 
   return (
-    <SafeAreaView style={{flex:1}}>
-      <StatusBar barStyle='dark-content' backgroundColor='#fff'/>
-      <Components.ScreensSwiper screens={screens}/>
+    <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
+      <StatusBar barStyle='dark-content' backgroundColor='#fff' />
+      <NavigationContainer theme={MyTheme}>
+        <MainNavigation />
+      </NavigationContainer>
+      {/* <Components.ScreensSwiper/> */}
       {/* <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>

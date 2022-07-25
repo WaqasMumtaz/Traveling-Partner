@@ -4,6 +4,7 @@ import Heading from "./Heading";
 import Paragraph from "./Paragraph";
 import MainButton from "./Button";
 import BackButton from "./BackButton";
+import MainTopBar from './MainBar'
 
 export default {
     ScreensSwiper,
@@ -11,5 +12,6 @@ export default {
     Heading,
     Paragraph,
     MainButton,
-    BackButton
+    BackButton,
+    MainTopBar
 }

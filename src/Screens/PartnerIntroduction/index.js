@@ -10,7 +10,8 @@ function PartnerIntroduction() {
     const navigation = useNavigation();
 
     const handleNavigation = () => {
-        alert('Other work still pending , Thanks');
+        navigation.navigate('SignUp');
+        // alert('Other work still pending , Thanks');
     }
 
     const handleBack=()=>{

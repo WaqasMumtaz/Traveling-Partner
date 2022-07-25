@@ -6,7 +6,6 @@ function LogoComponent({ src }){
         <Image 
           source={src} 
           style={styles.logoStyle} 
-         
         />
  )
 }

@@ -1,13 +1,17 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import Global from "../../Global";
+import { useNavigation } from "@react-navigation/native";
+
 
 export default function BackButton({ title , handleNavigation}) {
+  const navigation = useNavigation();
+
     return (
         <View style={{flexDirection:'row', marginHorizontal:8}}>
             <TouchableOpacity
                 style={styles.btn_style}
-                onPress={()=> handleNavigation()}
+                onPress={()=>{handleNavigation ? handleNavigation() : navigation.goBack()}}
             >
                 <Text style={styles.title}>{title}</Text>
             </TouchableOpacity>

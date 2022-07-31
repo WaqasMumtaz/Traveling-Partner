@@ -4,31 +4,33 @@ import Global from "../../Global";
 import driver_icon from '../../Assets/driver-icon.png';
 import partner_icon from '../../Assets/partner-icon.png';
 import Components from "../../Components";
+import { useNavigation } from "@react-navigation/native";
 
 function SignUp() {
     const [screen, setScreen] = useState(0);
+    const navigation = useNavigation();
+
+    function handleNavigation(screen) {
+        if(screen == 0){
+            setScreen(screen);
+            navigation.navigate('Driver Info');
+        }
+        else {
+            setScreen(screen);
+            navigation.navigate('Partner Info');
+        }
+    }
 
     return (
         <>
             <Components.MainTopBar
-                HeaderText={() => <HeaderText screen={screen} />}
+                HeaderText={HeaderText}
             />
             <View style={styles.container}>
-                {screen == 2 ?
-                    <>
-                        <Text>Phone number</Text>
-                        <View style={{ margin: 10 }} />
-                <Components.BackButton
-                    title={'Back'}
-                    handleNavigation={() => setScreen(0)}
-                />
-                    </>
-                    :
-                    <>
                         <View style={{ alignItems: 'center' }}>
                             <TouchableOpacity
                                 style={screen == 0 ? styles.clicked_btn : styles.unclicked_btn}
-                                onPress={() => setScreen(0)}
+                                onPress={() => handleNavigation(0)}
                             >
                                 <Image
                                     source={driver_icon}
@@ -42,7 +44,7 @@ function SignUp() {
                         <View style={{ alignItems: 'center', marginTop: 15 }}>
                             <TouchableOpacity
                                 style={screen == 1 ? styles.clicked_btn : styles.unclicked_btn}
-                                onPress={() => setScreen(1)}
+                                onPress={() => handleNavigation(1)}
                             >
                                 <Image
                                     source={partner_icon}
@@ -53,34 +55,22 @@ function SignUp() {
                                 <Text style={styles.title}>Partner</Text>
                             </View>
                         </View>
-                        <View style={{ margin: 10 }} />
+                        {/* <View style={{ margin: 10 }} />
                         <Components.BackButton
                             title={'Sign up with phone number'}
                             handleNavigation={() => setScreen(2)}
-                        />
-                    </>
-                }
-
+                        /> */}
             </View>
         </>
     )
 }
 
-function HeaderText({ screen }) {
+function HeaderText() {
     return (
-        <>
-            {screen == 2 ?
-                <>
-                    <Text style={{ fontSize: 30, fontWeight: '700' }}>Sign Up</Text>
-                    <Text style={{ fontSize: 20, fontWeight: '500' }}>with phone number</Text>
-                </>
-                :
                 <>
                     <Text style={{ fontSize: 30, fontWeight: '700' }}>Sign Up</Text>
                     <Text style={{ fontSize: 20, fontWeight: '500' }}>as a driver or partner</Text>
                 </>
-            }
-        </>
     )
 }
 

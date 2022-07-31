@@ -5,6 +5,8 @@ import EnableLocation from "./EnableLocation";
 import DriverIntroduction from "./DriverIntroduction";
 import PartnerIntroduction from "./PartnerIntroduction";
 import SignUp from './Auth';
+import DriverBasicInfo from "./DriverBasicInfo";
+import PartnerBasicInfo from "./PartnerBasicInfo";
 
 export default {
     AcceptRide,
@@ -13,5 +15,7 @@ export default {
     EnableLocation,
     DriverIntroduction,
     PartnerIntroduction,
-    SignUp
+    SignUp,
+    DriverBasicInfo,
+    PartnerBasicInfo
 }

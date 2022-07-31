@@ -4,7 +4,10 @@ import Heading from "./Heading";
 import Paragraph from "./Paragraph";
 import MainButton from "./Button";
 import BackButton from "./BackButton";
-import MainTopBar from './MainBar'
+import MainTopBar from './MainBar';
+import InputText from './InputText';
+import SkeltonLoader from './SkeltonLoader';
+import BottomSheet from "./BottomSheet";
 
 export default {
     ScreensSwiper,
@@ -13,5 +16,8 @@ export default {
     Paragraph,
     MainButton,
     BackButton,
-    MainTopBar
+    MainTopBar,
+    InputText,
+    SkeltonLoader,
+    BottomSheet
 }

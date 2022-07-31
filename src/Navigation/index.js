@@ -20,6 +20,8 @@ function MainNavigation() {
         <Stack.Screen name="Driver Introduction" component={Screens.DriverIntroduction} />
         <Stack.Screen name="Partner Introduction" component={Screens.PartnerIntroduction} />
         <Stack.Screen name="SignUp" component={Screens.SignUp} />
+        <Stack.Screen name='Driver Info' component={Screens.DriverBasicInfo}/>
+        <Stack.Screen name='Partner Info' component={Screens.PartnerBasicInfo}/>
 
       </Stack.Navigator>
   );

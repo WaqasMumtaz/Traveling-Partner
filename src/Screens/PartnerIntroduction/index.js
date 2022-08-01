@@ -14,7 +14,7 @@ function PartnerIntroduction() {
         // alert('Other work still pending , Thanks');
     }
 
-    const handleBack=()=>{
+    const handleBack = () => {
         navigation.goBack()
     }
 
@@ -35,6 +35,12 @@ function PartnerIntroduction() {
                         title='get started'
                         handleNavigation={handleNavigation}
                     />
+                    <View style={{ marginTop: 20 }}>
+                        <Components.SkipButton
+                            title={'Skip for now'}
+                            handleSkip={handleNavigation}
+                        />
+                    </View>
                     <View style={{ margin: 12 }} />
                     <Components.BackButton
                         title='Back'

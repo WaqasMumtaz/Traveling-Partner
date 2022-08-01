@@ -8,6 +8,7 @@ import MainTopBar from './MainBar';
 import InputText from './InputText';
 import SkeltonLoader from './SkeltonLoader';
 import BottomSheet from "./BottomSheet";
+import SkipButton from "./SkipButton";
 
 export default {
     ScreensSwiper,
@@ -19,5 +20,6 @@ export default {
     MainTopBar,
     InputText,
     SkeltonLoader,
-    BottomSheet
+    BottomSheet,
+    SkipButton
 }

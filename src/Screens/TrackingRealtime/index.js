@@ -6,6 +6,10 @@ import Global from '../../Global';
 
 function TrackingRealtime() {
 
+    const handleSkip = () => {
+        console.log('Skip')
+    }
+
     return (
         <>
             <SafeAreaView style={{ flex: 1 , backgroundColor:Global.white}}>
@@ -16,6 +20,12 @@ function TrackingRealtime() {
                     <Components.Heading heading='Tracking Realtime' />
                     <View style={{ marginTop:10}}>
                         <Components.Paragraph para={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum`} />
+                    </View>
+                    <View style={{ marginTop: 80 }}>
+                        <Components.SkipButton
+                            title={'Skip'}
+                            handleSkip={handleSkip}
+                        />
                     </View>
                 </View>
             </SafeAreaView>

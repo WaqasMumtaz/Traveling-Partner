@@ -8,17 +8,17 @@ import { useNavigation } from '@react-navigation/native';
 function DriverIntroduction() {
     const navigation = useNavigation();
 
-    const handleNavigation=()=>{
+    const handleNavigation = () => {
         navigation.navigate('Partner Introduction');
     }
 
-    const handleBack=()=>{
+    const handleBack = () => {
         navigation.goBack()
     }
 
     return (
         <>
-            <SafeAreaView style={{ flex: 1,backgroundColor: Global.white}}>
+            <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
                 <View style={styles.logo_container}>
                     <Components.LogoComponent src={driver_intro} />
                 </View>
@@ -27,15 +27,21 @@ function DriverIntroduction() {
                     <View style={{ marginTop: 10 }}>
                         <Components.Paragraph para={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum`} />
                     </View>
-                    <View style={{margin:15}}/>
-                        <Components.MainButton
-                            title='watch video'
-                            handleNavigation={handleNavigation}
+                    <View style={{ margin: 15 }} />
+                    <Components.MainButton
+                        title='watch video'
+                        handleNavigation={handleNavigation}
+                    />
+                    <View style={{ marginTop: 20 }}>
+                        <Components.SkipButton
+                            title={'Skip for now'}
+                            handleSkip={handleNavigation}
                         />
-                     <View style={{margin:12}}/>
+                    </View>
+                    <View style={{ margin: 12 }} />
                     <Components.BackButton
-                    title='Back'
-                    handleNavigation={handleBack}
+                        title='Back'
+                        handleNavigation={handleBack}
                     />
                 </View>
             </SafeAreaView>

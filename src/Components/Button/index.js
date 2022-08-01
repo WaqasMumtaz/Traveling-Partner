@@ -3,13 +3,13 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import Global from "../../Global";
 import { useNavigation } from "@react-navigation/native";
 
-export default function MainButton({ title , handleNavigation}) {
+export default function MainButton({ title , handleNavigation , btn_container_style}) {
   const navigation = useNavigation();
 
     return (
         <View style={{flexDirection:'row', marginHorizontal:8}}>
             <TouchableOpacity
-                style={styles.btn_style}
+                style={btn_container_style ? btn_container_style : styles.btn_style}
                 onPress={()=>  handleNavigation()}
             >
                 <Text style={styles.title}>{title}</Text>

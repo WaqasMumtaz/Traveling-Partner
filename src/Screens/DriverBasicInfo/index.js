@@ -21,9 +21,9 @@ const DriverBasicInfo = () => {
     cnicType: '',
     cnicFront: '',
     cnicBack: '',
-    license:'',
-    licenseFront:'',
-    licenseBack:''
+    license: '',
+    licenseFront: '',
+    licenseBack: ''
   })
   const [docs, setDocs] = useState({
     cnic: false,
@@ -39,9 +39,9 @@ const DriverBasicInfo = () => {
     cnicType: '',
     cnicFront: '',
     cnicBack: '',
-    license:'',
-    licenseFront:'',
-    licenseBack:''
+    license: '',
+    licenseFront: '',
+    licenseBack: ''
   })
 
 
@@ -67,6 +67,10 @@ const DriverBasicInfo = () => {
         license: true
       })
     }
+  }
+
+  function handleSubmit(params) {
+    alert('Detail has been submited');
   }
 
   async function handleCNIC(index) {
@@ -331,7 +335,7 @@ const DriverBasicInfo = () => {
               </View>
             </View>
             {/* Driver License Docs */}
-            <View style={{ marginHorizontal: 15 , marginTop:15}}>
+            <View style={{ marginHorizontal: 15, marginTop: 15 }}>
               <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <View style={{ flex: 1 }}>
                   <View style={{ marginVertical: 10 }}>
@@ -340,7 +344,7 @@ const DriverBasicInfo = () => {
                   <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                     <TouchableOpacity
                       onPress={() => openSheet('license', 'front')}
-                      style={[styles.icon_container, {backgroundColor:Global.secondary_clr}]}
+                      style={[styles.icon_container, { backgroundColor: Global.secondary_clr }]}
                     >
                       <IonicIcon name='person' size={35} color={Global.white} />
                     </TouchableOpacity>
@@ -376,7 +380,7 @@ const DriverBasicInfo = () => {
                   <View style={{ flexDirection: 'row', alignItems: "center" }}>
                     <TouchableOpacity
                       onPress={() => openSheet('license', 'back')}
-                      style={[styles.icon_container, {backgroundColor:Global.secondary_clr}]}
+                      style={[styles.icon_container, { backgroundColor: Global.secondary_clr }]}
                     >
                       <IonicIcon name='person' size={35} color={Global.white} />
                     </TouchableOpacity>
@@ -407,10 +411,16 @@ const DriverBasicInfo = () => {
                 </View>
               </View>
             </View>
-
+          </View>
+          <View style={{marginTop:18 ,marginHorizontal:10 }}>
+            <Components.MainButton
+              title='completed'
+              handleNavigation={handleSubmit}
+              btn_container_style={styles.btn_container_style}
+            />
           </View>
           <View style={{ marginVertical: 18 }} >
-          <Components.BackButton title={'back'} />
+            <Components.BackButton title={'back'} />
           </View>
         </KeyboardAwareScrollView>
         <ActionSheet
@@ -452,6 +462,13 @@ function SkeltonLoading() {
 const styles = StyleSheet.create({
   container: {
     flex: 1
+  },
+  btn_container_style:{
+    flex:1,
+    backgroundColor: Global.main_color,
+    alignItems:'center',
+    padding:12,
+    borderRadius:22
   },
   imgLoaderStyle: {
     borderWidth: 5,

@@ -43,7 +43,9 @@ const PartnerBasicInfo = () => {
     licenseFront:'',
     licenseBack:''
   })
-
+  function handleSubmit(params) {
+    alert('Detail has been submited');
+  }
 
   let optionArray = [
     'Gallery',
@@ -68,6 +70,7 @@ const PartnerBasicInfo = () => {
       })
     }
   }
+
 
   async function handleCNIC(index) {
     if (index == 0) {
@@ -332,6 +335,13 @@ const PartnerBasicInfo = () => {
             </View>
             {/* Driver License Docs */}
           </View>
+          <View style={{marginTop:18 ,marginHorizontal:10 }}>
+            <Components.MainButton
+              title='completed'
+              handleNavigation={handleSubmit}
+              btn_container_style={styles.btn_container_style}
+            />
+          </View>
           <View style={{ marginVertical: 18 }} >
           <Components.BackButton title={'back'} />
           </View>
@@ -375,6 +385,13 @@ function SkeltonLoading() {
 const styles = StyleSheet.create({
   container: {
     flex: 1
+  },
+  btn_container_style:{
+    flex:1,
+    backgroundColor: Global.main_color,
+    alignItems:'center',
+    padding:12,
+    borderRadius:22
   },
   imgLoaderStyle: {
     borderWidth: 5,

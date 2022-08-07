@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInput, StyleSheet, View, Text , TouchableOpacity} from 'react-native';
+import { TextInput, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { Icon } from 'react-native-elements';
 import Icon5 from 'react-native-vector-icons/FontAwesome';
 import IonicIcon from 'react-native-vector-icons/Ionicons';
@@ -21,10 +21,11 @@ export default function InputText({
   onPress,
   inputStyle,
   multiLine,
-  sizeIcon
+  sizeIcon,
+  inputTextRemove = false
 }) {
   return (
-    <View style={[ styles.inputStyle]}>
+    <View style={inputStyle ? inputStyle : styles.inputStyle}>
       {/* {icon && <Icon name={icon} iconStyle={styles.searchIcon} />} */}
       <TextInput
         style={styles.input}
@@ -40,13 +41,22 @@ export default function InputText({
         editable={editable}
         multiline={multiLine}
       />
-      {/* {icon2 && <IonicIcon name={icon2} style={styles.infoIconStyle} size={sizeIcon}/>} */}
+      {inputTextRemove ?
+        <TouchableOpacity onPress={()=> handleChange(name , '')}>
+          <IonicIcon name='close-circle-outline' style={styles.infoIconStyle} size={23} />
+        </TouchableOpacity>
+        : icon2 ?
+          <IonicIcon name={icon2} style={styles.infoIconStyle} size={sizeIcon} />
+          :
+          null
+      }
+      {icon2 && <IonicIcon name={icon2} style={styles.infoIconStyle} size={sizeIcon} />}
       {placeholder === 'Password' && (
-      <TouchableOpacity onPress={()=> onPress()} style={styles.passEye}>
-        <Icon5 name={secureTextEntry == true ? 'eye-slash' : 'eye'} color={Global.inputFieldPlaceHolder} size={20}/>
-      </TouchableOpacity>
+        <TouchableOpacity onPress={() => onPress()} style={styles.passEye}>
+          <Icon5 name={secureTextEntry == true ? 'eye-slash' : 'eye'} color={Global.inputFieldPlaceHolder} size={20} />
+        </TouchableOpacity>
       )}
-      
+
     </View>
   );
 }
@@ -57,13 +67,13 @@ let styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Global.white,
-    borderColor:Global.border_color,
+    borderColor: Global.border_color,
     height: 50,
     borderRadius: 100,
-    borderWidth:1
+    borderWidth: 1
     // margin:25
   },
-  passEye:{
+  passEye: {
     margin: 10,
     color: Global.gray_color,
   },
@@ -72,9 +82,9 @@ let styles = StyleSheet.create({
     color: Global.inputFieldPlaceHolder,
     marginLeft: 1,
   },
-  infoIconStyle:{
+  infoIconStyle: {
     padding: 10,
-    color: Global.main_color,
+    color: Global.gray_color,
     marginLeft: 1,
   },
   input: {
@@ -84,8 +94,8 @@ let styles = StyleSheet.create({
     paddingBottom: 15,
     paddingLeft: 15,
     marginLeft: 5,
-    height:50,
-    borderRadius:100
+    height: 50,
+    borderRadius: 100
     //backgroundColor:'red',
     // borderTopLeftRadius: 4,
     // borderBottomLeftRadius: 4,

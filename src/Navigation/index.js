@@ -22,6 +22,9 @@ function MainNavigation() {
         <Stack.Screen name="SignUp" component={Screens.SignUp} />
         <Stack.Screen name='Driver Info' component={Screens.DriverBasicInfo}/>
         <Stack.Screen name='Partner Info' component={Screens.PartnerBasicInfo}/>
+        <Stack.Screen name='Mobile Phone' component={Screens.SignUpWithMobile}/>
+        <Stack.Screen name='OTP Screen' component={Screens.OTPScreen}/>
+        
 
       </Stack.Navigator>
   );

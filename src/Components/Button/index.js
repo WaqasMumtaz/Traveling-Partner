@@ -10,7 +10,7 @@ export default function MainButton({ title , handleNavigation , btn_container_st
         <View style={{flexDirection:'row', marginHorizontal:8}}>
             <TouchableOpacity
                 style={btn_container_style ? btn_container_style : styles.btn_style}
-                onPress={()=>  handleNavigation()}
+                onPress={()=> { handleNavigation ? handleNavigation() : console.log('Clicked Button') } }
             >
                 <Text style={styles.title}>{title}</Text>
             </TouchableOpacity>

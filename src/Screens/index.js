@@ -7,6 +7,8 @@ import PartnerIntroduction from "./PartnerIntroduction";
 import SignUp from './Auth';
 import DriverBasicInfo from "./DriverBasicInfo";
 import PartnerBasicInfo from "./PartnerBasicInfo";
+import SignUpWithMobile from "./SignUpWithMobile";
+import OTPScreen from './OTPScreen';
 
 export default {
     AcceptRide,
@@ -17,5 +19,7 @@ export default {
     PartnerIntroduction,
     SignUp,
     DriverBasicInfo,
-    PartnerBasicInfo
+    PartnerBasicInfo,
+    SignUpWithMobile,
+    OTPScreen
 }

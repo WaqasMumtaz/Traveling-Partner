@@ -55,11 +55,11 @@ function SignUp() {
                                 <Text style={styles.title}>Partner</Text>
                             </View>
                         </View>
-                        {/* <View style={{ margin: 10 }} />
+                        <View style={{ margin: 10 }} />
                         <Components.BackButton
                             title={'Sign up with phone number'}
-                            handleNavigation={() => setScreen(2)}
-                        /> */}
+                            handleNavigation={() => navigation.navigate('Mobile Phone')}
+                        />
             </View>
         </>
     )

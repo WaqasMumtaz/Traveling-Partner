@@ -1,6 +1,7 @@
 export default {
     main_color:'#FFD428',
     btn_background:'#000',
+    black_clr:'#000',
     white:'#fff',
     border_color:'#EFEFF4',
     gray_color:'#B4B4B4',

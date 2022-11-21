@@ -9,6 +9,9 @@ import InputText from './InputText';
 import SkeltonLoader from './SkeltonLoader';
 import BottomSheet from "./BottomSheet";
 import SkipButton from "./SkipButton";
+import TopLogo from "./TopLogo";
+import RoundIcon from './RoundIcon';
+import Gradient from "./GradientBG";
 
 export default {
     ScreensSwiper,
@@ -21,5 +24,8 @@ export default {
     InputText,
     SkeltonLoader,
     BottomSheet,
-    SkipButton
+    SkipButton,
+    TopLogo,
+    RoundIcon,
+    Gradient
 }

@@ -62,43 +62,33 @@ const MyTheme = {
 
 const App = () => {
 
-
   useEffect(() => {
     SplashScreen.hide();
   }, []);
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
+    <>
       <StatusBar barStyle='dark-content' backgroundColor='#fff' />
-      <NavigationContainer theme={MyTheme}>
-        <MainNavigation />
-      </NavigationContainer>
-      {/* <Components.ScreensSwiper/> */}
-      {/* <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
+      <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
+        <Components.TopLogo/>
+        {/* <View style={{
+          zIndex:1,
+          position:'relative',
+          backgroundColor:'red',
+        }}>
+          <Text
           style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView> */}
-    </SafeAreaView>
+            backgroundColor:'red',
+            position:'absolute',
+            top:1,
+          }}
+          >Hello To The World</Text>
+        </View> */}
+        <NavigationContainer theme={MyTheme}>
+          <MainNavigation />
+        </NavigationContainer>
+      </SafeAreaView>
+    </>
   );
 };
 

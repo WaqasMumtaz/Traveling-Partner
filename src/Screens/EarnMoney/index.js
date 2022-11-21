@@ -9,29 +9,21 @@ import { useNavigation, } from '@react-navigation/native';
 function EarnMoney() {
     const navigation = useNavigation();
 
-    const handleNavigation=()=>{
+    const handleNavigation = () => {
         navigation.navigate('Enable Location');
     }
 
     return (
-        <>
-            <SafeAreaView style={{ flex: 1,backgroundColor: Global.white}}>
-                <View style={styles.logo_container}>
-                    <Components.LogoComponent src={earn_money} />
+        <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
+            <View style={styles.body}>
+                <Components.RoundIcon icon={earn_money} />
+                <Components.Heading heading='Earn Money' />
+                <View style={{ marginTop: 10 }}>
+                    <Components.Paragraph para={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum`} />
                 </View>
-                <View style={styles.body}>
-                    <Components.Heading heading='Earn Money' />
-                    <View style={{ marginTop: 10 }}>
-                        <Components.Paragraph para={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum`} />
-                    </View>
-                    <View style={{margin:15}}/>
-                        <Components.MainButton
-                            title='get started'
-                            handleNavigation={handleNavigation}
-                        />
-                </View>
-            </SafeAreaView>
-        </>
+                <Components.SkipButton handleSkip={handleNavigation}/>
+            </View>
+        </SafeAreaView>
     )
 }
 
@@ -41,11 +33,12 @@ const styles = StyleSheet.create({
     logo_container: {
         flex: 1.3,
         alignItems: 'center',
-        justifyContent: 'center'
+
     },
     body: {
         flex: 1,
         alignItems: 'center',
+        justifyContent: 'center',
         marginHorizontal: 20
     },
 })

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Image, TouchableOpacity } from 'react-native';
-import enable_location from '../../Assets/enable-location.png';
+import enable_location from '../../Assets/location.png';
 import Components from '../../Components';
 import Global from '../../Global';
 import { useNavigation } from '@react-navigation/native';
@@ -8,41 +8,39 @@ import { useNavigation } from '@react-navigation/native';
 function EnableLocation() {
     const navigation = useNavigation();
 
-    const handleNavigation=()=>{
+    const handleNavigation = () => {
         navigation.navigate('Driver Introduction');
     }
 
-    const handleBack=()=>{
+    const handleBack = () => {
         navigation.goBack()
     }
-    
+
     return (
         <>
             <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
-                <View style={styles.logo_container}>
-                    <Components.LogoComponent src={enable_location} />
-                </View>
                 <View style={styles.body}>
+                    <Components.RoundIcon icon={enable_location} />
                     <Components.Heading heading='Enable Location' />
                     <View style={{ marginTop: 10 }}>
                         <Components.Paragraph para={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum`} />
                     </View>
                     <View style={{ margin: 15 }} />
                     <Components.MainButton
-                        title='use my location'
+                        title='Use My Location'
                         handleNavigation={handleNavigation}
+                        btn_container_style={{flex:0, backgroundColor:'transparent', borderRadius:0}}
+                        title_style={{color:Global.black_clr,textDecorationLine:'underline'}}
                     />
-                     <View style={{ marginTop: 20 }}>
-                        <Components.SkipButton
-                            title={'Skip for now'}
-                            handleSkip={handleNavigation}
-                        />
-                    </View>
-                    <View style={{margin:12}}/>
+                    <Components.SkipButton
+                        handleSkip={handleNavigation}
+                    />
+
+                    {/* <View style={{margin:12}}/>
                     <Components.BackButton
                     title='Back'
                     handleNavigation={handleBack}
-                    />
+                    /> */}
                 </View>
             </SafeAreaView>
         </>
@@ -55,11 +53,13 @@ const styles = StyleSheet.create({
     logo_container: {
         flex: 1.3,
         alignItems: 'center',
-        justifyContent: 'center'
+
     },
     body: {
         flex: 1,
+        marginTop:'20%',
         alignItems: 'center',
+        justifyContent: 'center',
         marginHorizontal: 20
     },
 })

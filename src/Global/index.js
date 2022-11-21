@@ -8,4 +8,6 @@ export default {
     light_gray:'#F1F1F1',
     secondary_clr:'#FF8900',
     skip_btn_clr:'#BEC2CE',
+    gradient_1:"#FCE001",
+    gradient_2:"#FDB813"
 }

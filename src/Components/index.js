@@ -12,6 +12,9 @@ import SkipButton from "./SkipButton";
 import TopLogo from "./TopLogo";
 import RoundIcon from './RoundIcon';
 import Gradient from "./GradientBG";
+import TaxiGroup from "./TaxiGroup";
+import PlayButton from "./PlayBtn";
+import AdBanner from "./AdBanner";
 
 export default {
     ScreensSwiper,
@@ -27,5 +30,8 @@ export default {
     SkipButton,
     TopLogo,
     RoundIcon,
-    Gradient
+    Gradient,
+    TaxiGroup,
+    PlayButton,
+    AdBanner
 }

@@ -20,27 +20,23 @@ function EnableLocation() {
         <>
             <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
                 <View style={styles.body}>
-                    <Components.RoundIcon icon={enable_location} />
-                    <Components.Heading heading='Enable Location' />
-                    <View style={{ marginTop: 10 }}>
-                        <Components.Paragraph para={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum`} />
+                    <View style={styles.body_1}>
+                        <Components.RoundIcon icon={enable_location} />
+                        <Components.Heading heading='Enable Location' />
+                        <View style={{ marginTop: 10 }}>
+                            <Components.Paragraph para={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum`} />
+                        </View>
+                        <View style={{ margin: 15 }} />
+                        <Components.MainButton
+                            title='Use My Location'
+                            handleNavigation={handleNavigation}
+                            btn_container_style={{ flex: 0, backgroundColor: 'transparent', borderRadius: 0 }}
+                            title_style={{ color: Global.black_clr, textDecorationLine: 'underline' }}
+                        />
+                        <Components.SkipButton
+                            handleSkip={handleNavigation}
+                        />
                     </View>
-                    <View style={{ margin: 15 }} />
-                    <Components.MainButton
-                        title='Use My Location'
-                        handleNavigation={handleNavigation}
-                        btn_container_style={{flex:0, backgroundColor:'transparent', borderRadius:0}}
-                        title_style={{color:Global.black_clr,textDecorationLine:'underline'}}
-                    />
-                    <Components.SkipButton
-                        handleSkip={handleNavigation}
-                    />
-
-                    {/* <View style={{margin:12}}/>
-                    <Components.BackButton
-                    title='Back'
-                    handleNavigation={handleBack}
-                    /> */}
                 </View>
             </SafeAreaView>
         </>
@@ -57,9 +53,13 @@ const styles = StyleSheet.create({
     },
     body: {
         flex: 1,
-        marginTop:'20%',
+        marginTop: '35%',
+        margin: 20,
+    },
+    body_1: {
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        marginHorizontal: 20
-    },
+        // backgroundColor: 'red',
+    }
 })

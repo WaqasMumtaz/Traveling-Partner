@@ -14,12 +14,14 @@ function TrackingRealtime() {
         <>
             <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
                 <View style={styles.body}>
-                    <Components.RoundIcon icon={tracking_location} />
-                    <Components.Heading heading='Tracking Realtime' />
-                    <View style={{ marginTop: 10 }}>
-                        <Components.Paragraph para={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum`} />
+                    <View style={styles.body_1}>
+                        <Components.RoundIcon icon={tracking_location} />
+                        <Components.Heading heading='Tracking Realtime' />
+                        <View style={{ marginTop: 10 }}>
+                            <Components.Paragraph para={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum`} />
+                        </View>
+                        <Components.SkipButton handleSkip={() => console.log('skip')} />
                     </View>
-                    <Components.SkipButton handleSkip={()=> console.log('skip')}/>
                 </View>
             </SafeAreaView>
         </>
@@ -36,8 +38,13 @@ const styles = StyleSheet.create({
     },
     body: {
         flex: 1,
+        marginTop: '35%',
+        margin: 20,
+    },
+    body_1: {
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        marginHorizontal: 20
-    },
+        // backgroundColor: 'red',
+    }
 })

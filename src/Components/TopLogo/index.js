@@ -16,14 +16,14 @@ const styles = StyleSheet.create({
     container:{
         // flex:0.2,
        // flexDirection:'row',
-        backgroundColor:'red',
+        // backgroundColor:'red',
         alignItems:'flex-start',
         zIndex:1,
         position:'relative'
     },
     logo:{
-        height:220,
-        width:190,
+        height:180,
+        width:155,
         position:'absolute'
     }
 })

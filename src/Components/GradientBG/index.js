@@ -8,7 +8,7 @@ const Gradient = ({ children, _style }) => {
         <LinearGradient
             // locations={[0, 0.5]}
             colors={[Global.gradient_1, Global.gradient_2]}
-            style={{...styles.linearGradient, ..._style}}>
+            style={_style}>
             {children}
         </LinearGradient>
     )

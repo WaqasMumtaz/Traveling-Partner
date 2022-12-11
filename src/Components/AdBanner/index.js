@@ -19,11 +19,12 @@ export default AdBanner
 const styles = StyleSheet.create({
     container:{
         flex: 0.6,
-        backgroundColor:'blue',
+        // backgroundColor:'blue',
         borderRadius:10
     },
     image:{
         width:'100%',
-        borderRadius:10
+        borderRadius:10,
+         // flex:1
     }
 })

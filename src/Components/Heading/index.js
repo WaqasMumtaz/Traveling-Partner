@@ -1,8 +1,24 @@
 import React from "react";
-import { Text , StyleSheet} from "react-native";
+import { Text , StyleSheet, View} from "react-native";
 
-export default function Heading({ heading }){
- return(<Text style={[styles.mainHeading, { fontWeight:'600'}]}>{heading}</Text>)
+function Heading({ heading }){
+ return(<Text style={[styles.mainHeading, { fontWeight:'700'}]}>{heading}</Text>)
+}
+
+function Heading3({ title }) {
+ return(<View style={{margin:10}}><Text style={[styles.heading3, { fontWeight:'bold'}]}>{title}</Text></View>)
+    
+}
+
+function Heading4({ title }) {
+ return(<View><Text style={[styles.heading4, { fontWeight:'400'}]}>{title}</Text></View>)
+    
+}
+
+export {
+    Heading,
+    Heading3,
+    Heading4
 }
 
 const styles = StyleSheet.create({
@@ -11,5 +27,14 @@ const styles = StyleSheet.create({
         fontSize: 30,
         // fontWeight:600
     },
+    heading3:{
+      fontSize:20,
+      color: '#000',
+    },
+    heading4:{
+        fontSize:12,
+        color: '#000'
+      },
+
 })
 

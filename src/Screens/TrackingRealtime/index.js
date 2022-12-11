@@ -12,6 +12,7 @@ function TrackingRealtime() {
 
     return (
         <>
+            <Components.TopLogo />
             <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
                 <View style={styles.body}>
                     <View style={styles.body_1}>

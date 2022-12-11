@@ -18,6 +18,7 @@ function EnableLocation() {
 
     return (
         <>
+        <Components.TopLogo/>
             <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
                 <View style={styles.body}>
                     <View style={styles.body_1}>
@@ -27,12 +28,15 @@ function EnableLocation() {
                             <Components.Paragraph para={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum`} />
                         </View>
                         <View style={{ margin: 15 }} />
-                        <Components.MainButton
+                        <TouchableOpacity onPress={()=> handleNavigation()}>
+                            <Text style={{textDecorationLine:'underline', fontSize:16, fontWeight:'bold'}}>Use My Location</Text>
+                        </TouchableOpacity>
+                        {/* <Components.MainButton
                             title='Use My Location'
                             handleNavigation={handleNavigation}
                             btn_container_style={{ flex: 0, backgroundColor: 'transparent', borderRadius: 0 }}
                             title_style={{ color: Global.black_clr, textDecorationLine: 'underline' }}
-                        />
+                        /> */}
                         <Components.SkipButton
                             handleSkip={handleNavigation}
                         />

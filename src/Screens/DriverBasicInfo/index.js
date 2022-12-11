@@ -175,10 +175,11 @@ const DriverBasicInfo = () => {
 
   return (
     <>
-      <StatusBar barStyle='dark-content' backgroundColor={Global.light_gray} />
+      {/* <StatusBar barStyle='dark-content' backgroundColor={Global.light_gray} />
       <Components.MainTopBar
         HeaderText={HeaderText}
-      />
+      /> */}
+        <Components.TopLogo/>
       <View style={styles.container}>
         <KeyboardAwareScrollView
           style={{ flexGrow: 1 }}

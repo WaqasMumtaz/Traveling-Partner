@@ -70,20 +70,7 @@ const App = () => {
     <>
       <StatusBar barStyle='dark-content' backgroundColor='#fff' />
       <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
-        <Components.TopLogo/>
-        {/* <View style={{
-          zIndex:1,
-          position:'relative',
-          backgroundColor:'red',
-        }}>
-          <Text
-          style={{
-            backgroundColor:'red',
-            position:'absolute',
-            top:1,
-          }}
-          >Hello To The World</Text>
-        </View> */}
+        {/* <Components.TopLogo/> */}
         <NavigationContainer theme={MyTheme}>
           <MainNavigation />
         </NavigationContainer>

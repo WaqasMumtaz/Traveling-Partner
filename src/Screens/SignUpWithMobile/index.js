@@ -24,39 +24,50 @@ export default function SignUpWithMobile() {
 
     return (
         <>
-            <StatusBar barStyle='dark-content' backgroundColor={Global.light_gray} />
-            <Components.MainTopBar
-                HeaderText={HeaderText}
-            />
+            <Components.TopLogo />
             <View style={styles.container}>
-                <Components.InputText
-                    placeholder="Phone Number"
-                    icon="account-circle"
-                    name={'phone_number'}
-                    handleChange={(name, value) => handleChange(name, value)}
-                    value={authObj.phone_number}
-                    inputStyle={styles.inputStyle}
-                    inputTextRemove={authObj.phone_number == '' ? false : true}
-                />
-                {errorObj.phone_number ? (
-                    <Text style={styles.error}>{errorObj.phone_number}</Text>
-                ) : (
-                    ''
-                )}
-                <View style={{marginTop: 20 }}/>
-                    <Components.MainButton
-                        title='next'
-                        handleNavigation={()=> navigation.navigate('OTP Screen')}
-                        btn_container_style={styles.btn_container_style}
+                <View style={{
+                    flex: 0.7,
+                    // backgroundColor:'green'
+                }} />
+                <KeyboardAwareScrollView
+                    contentContainerStyle={{
+                        flex: 1,
+                        alignItems: 'center'
+                    }}
 
+                >
+                    <Components.Heading3
+                        title={'SignUp with phone number'}
                     />
-                <View style={{marginTop:30, flexDirection:'row', alignItems:'center'}}>
-                       <Text>Can't have an account?</Text>
-                       <TouchableOpacity onPress={()=> navigation.goBack()}>
-                        <Text style={{marginLeft:5,fontSize:17, fontWeight:'700', textDecorationLine:"underline"}}>Login</Text>
-                       </TouchableOpacity>
-                </View>
-            
+                    <Components.InputText
+                        placeholder="Phone Number"
+                        icon="account-circle"
+                        name={'phone_number'}
+                        handleChange={(name, value) => handleChange(name, value)}
+                        value={authObj.phone_number}
+                        inputStyle={styles.inputStyle}
+                        inputTextRemove={authObj.phone_number == '' ? false : true}
+                    />
+                    {errorObj.phone_number ? (
+                        <Text style={styles.error}>{errorObj.phone_number}</Text>
+                    ) : (
+                        ''
+                    )}
+                    <View style={{ marginTop: 20 }} />
+
+                    <Components.MainButton
+                        title='Next'
+                        handleNavigation={() => navigation.navigate('OTP Screen')}
+                        btn_container_style={styles.btn_container_style}
+                    />
+                    <View style={{ marginTop: 30, flexDirection: 'row', alignItems: 'center' }}>
+                        <Text>Can't have an account?</Text>
+                        <TouchableOpacity onPress={() => navigation.goBack()}>
+                            <Text style={{ marginLeft: 5, fontSize: 16, fontWeight: '600', textDecorationLine: "underline" }}>Login</Text>
+                        </TouchableOpacity>
+                    </View>
+                </KeyboardAwareScrollView>
             </View>
         </>
     )
@@ -77,28 +88,29 @@ function HeaderText() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-         justifyContent: 'center',
-         alignItems: "center"
+        // justifyContent: 'center',
+        // alignItems: "center",
+        backgroundColor: Global.white
     },
     inputStyle: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: Global.white,
-        borderColor: Global.border_color,
+        backgroundColor: Global.light_gray,
+        borderColor: Global.light_gray,
         height: 50,
         borderRadius: 100,
         borderWidth: 1,
         marginHorizontal: 25
     },
-    btn_container_style:{
-        flex:1,
-        flexDirection:'row',
-        alignItems:'center',
-        justifyContent:'center',
-        backgroundColor: Global.main_color,
-        padding:12,
-        borderRadius:22,
-        marginHorizontal:18
-      },
+    btn_container_style: {
+        //flex: 1,
+        // flexDirection: 'row',
+        // alignItems: 'center',
+        // justifyContent: 'center',
+        // backgroundColor: Global.main_color,
+        //padding: 12,
+        // borderRadius: 22,
+        marginHorizontal: 25
+    },
 })

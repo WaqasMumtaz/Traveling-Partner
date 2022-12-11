@@ -14,6 +14,8 @@ function EarnMoney() {
     }
 
     return (
+        <>
+        <Components.TopLogo/>
         <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
             <View style={styles.body}>
                 <View style={styles.body_1}>
@@ -26,6 +28,7 @@ function EarnMoney() {
                 </View>
             </View>
         </SafeAreaView>
+    </>
     )
 }
 

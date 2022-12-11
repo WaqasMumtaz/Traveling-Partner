@@ -10,7 +10,7 @@ function DriverIntroduction() {
     const navigation = useNavigation();
 
     const handleNavigation = () => {
-        navigation.navigate('Partner Introduction');
+        navigation.navigate('SignUp');
     }
 
     const handleBack = () => {
@@ -18,35 +18,35 @@ function DriverIntroduction() {
     }
 
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
-            {/* <View style={styles.logo_container}>
+        <>
+            <Components.TopLogo />
+            <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
+                {/* <View style={styles.logo_container}>
                     <Components.LogoComponent src={driver_intro} />
                 </View> */}
-            <View style={styles.body}>
-                <View style={styles.body_1}>
-                    <Components.RoundIcon icon={driver} />
-                    <Components.Heading heading='Driver Introduction' />
-                    <View style={{ marginTop: 10 }}>
-                        <Components.Paragraph para={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum`} />
+                <View style={styles.body}>
+                    <View style={styles.body_1}>
+                        <Components.RoundIcon icon={driver} />
+                        <Components.Heading heading='Driver Introduction' />
+                        <View style={{ marginTop: 10 }}>
+                            <Components.Paragraph para={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum`} />
+                        </View>
                     </View>
-                </View>
-                <View style={styles.body_2}>
-                    <Components.TaxiGroup
-                        _style={{ alignItems: 'center', justifyContent: "center" }}
-                    >
-                        <Components.PlayButton />
-                    </Components.TaxiGroup>
+                    <View style={styles.body_2}>
+                        <Components.TaxiGroup
+                            _style={{ alignItems: 'center', justifyContent: "center" }}
+                        >
+                            <Components.PlayButton />
+                        </Components.TaxiGroup>
 
+                    </View>
+                    <Components.SkipButton
+                        handleSkip={handleNavigation}
+                    />
+                    <Components.AdBanner />
                 </View>
-                <Components.SkipButton
-                    handleSkip={handleNavigation}
-                />
-                <Components.AdBanner />
-                {/* <View style={styles.body_4}>
-                    <Text>Ads Card</Text>
-                </View> */}
-            </View>
-        </SafeAreaView>
+            </SafeAreaView>
+        </>
     )
 }
 

@@ -12,7 +12,7 @@ import IonicIcon from 'react-native-vector-icons/Ionicons';
 
 const BottomTabs = () => {
     return (
-        <Gradient _style={{ flex: 0.31 }}>
+        <Gradient _style={{height:65}}>
             <View style={styles.container}>
                 <TouchableOpacity style={styles.form}>
                     <Image source={chat} style={styles.icons} />

@@ -32,7 +32,7 @@ export default function SignUpWithMobile() {
                 }} />
                 <KeyboardAwareScrollView
                     contentContainerStyle={{
-                        flex: 1,
+                        // flex: 1,
                         alignItems: 'center'
                     }}
 

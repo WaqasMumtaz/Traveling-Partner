@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     },
     body: {
         flex: 1,
-        marginTop: '35%',
+        // marginTop: '35%',
         margin: 20
     },
     body_1: {

@@ -10,6 +10,7 @@ export default {
     skip_btn_clr:'#BEC2CE',
     gradient_1:"#FCE001",
     gradient_2:"#FDB813",
-    blue:"#000058"
+    blue:"#000058",
+    inputs_clr:"#F1F2F7"
     
 }

@@ -10,8 +10,11 @@ import logistic from '../../Assets/logistic.png';
 import location_taxi from '../../Assets/location_taxi.png';
 import tracking_taxi from '../../Assets/tracking_taxi.png';
 import rectangle from '../../Assets/rectangle.png'
+import { useNavigation } from "@react-navigation/native";
+
 
 const Home = () => {
+    let navigation = useNavigation();
     let data = [
         {
             id: 1,
@@ -52,7 +55,8 @@ const Home = () => {
     ]
     const [taxiData, setTaxiData] = useState(data);
 
-    function handleClicked(id) {
+    function handleClicked(name , id) {
+        console.log('Name Navigation >>>', name);
         let arr = [...data];
         // let indx = arr.findIndex(item => item.id == id);
         // if(indx != -1){
@@ -63,6 +67,9 @@ const Home = () => {
         let newArr = arr.map(item => (item.id == id ? { ...item, selected: true } : { ...item, selected: false }))
         console.log('New Arr >>>', newArr);
         setTaxiData(newArr);
+        if(name === 'Taxi Stands'){
+          navigation.replace('TaxiStand');
+        }
     }
 
 
@@ -83,7 +90,7 @@ const Home = () => {
                                         <View key={indx} style={{ width: '33.33%', justifyContent: 'center', alignItems: 'center', padding: 10 }}>
                                             <TouchableOpacity
                                                 style={item.selected ? null : styles.iconsStyle}
-                                                onPress={() => handleClicked(item.id)}
+                                                onPress={() => handleClicked(item.name ,item.id)}
                                             >
                                                 {item.selected ?
                                                     <ImageBackground source={rectangle} resizeMode='cover' style={styles.selectedOption}>

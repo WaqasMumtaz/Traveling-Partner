@@ -10,6 +10,7 @@ import PartnerBasicInfo from "./PartnerBasicInfo";
 import SignUpWithMobile from "./SignUpWithMobile";
 import OTPScreen from './OTPScreen';
 import Home from "./Home";
+import TaxiStand from "./TaxiStand";
 
 export default {
     AcceptRide,
@@ -23,5 +24,6 @@ export default {
     PartnerBasicInfo,
     SignUpWithMobile,
     OTPScreen,
-    Home
+    Home,
+    TaxiStand
 }

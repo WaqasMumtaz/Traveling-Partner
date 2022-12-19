@@ -1,6 +1,6 @@
 import ScreensSwiper from "./Swiper";
 import LogoComponent from "./Logo";
-import { Heading, Heading3, Heading4 } from "./Heading";
+import { Heading, Heading3, Heading4, Heading2 } from "./Heading";
 import Paragraph from "./Paragraph";
 import MainButton from "./Button";
 import BackButton from "./BackButton";
@@ -19,6 +19,7 @@ import MainIcon from './MainRoundIcon';
 import Banner from "./Banner";
 import ListItem from "./ListItem";
 import BottomTabs from "./BottomTabs";
+import DropDown from "./Dropdown";
 
 export default {
     ScreensSwiper,
@@ -43,5 +44,7 @@ export default {
     Heading4,
     Banner,
     ListItem,
-    BottomTabs
+    BottomTabs,
+    DropDown,
+    Heading2
 }

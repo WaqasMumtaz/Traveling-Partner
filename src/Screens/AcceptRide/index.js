@@ -15,16 +15,14 @@ function AcceptRide() {
         <>
         <Components.TopLogo/>
         <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
-            <View style={styles.body}>
                 <View style={styles.body_1}>
                     <Components.RoundIcon icon={taxiIcon} />
                     <Components.Heading heading='Accept a Ride' />
-                    <View style={{ marginTop: 10 }}>
+                    <View style={{ margin: 10 }}>
                         <Components.Paragraph para={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum`} />
                     </View>
                     <Components.SkipButton handleSkip={() => console.log('skip')} />
                 </View>
-            </View>
         </SafeAreaView>
         </>
     )

@@ -28,7 +28,7 @@ function SignUp() {
             /> */}
         <Components.TopLogo/>
             <View style={styles.body}>
-                    <View style={{flex:0.5, justifyContent:'flex-end',alignItems:"center"}}>
+                    <View style={{flex:0.5,alignItems:"center"}}>
                         <Text style={{fontSize:16, fontWeight:'bold'}}>Sign up as a Driver or Partner</Text>
                     </View>
                 <View style={styles.body_1}>      
@@ -109,8 +109,9 @@ const styles = StyleSheet.create({
     },
     body: {
         flex: 1,
-        marginTop: '35%',
-        margin: 20
+        // marginTop: '35%',
+        padding: 15,
+        backgroundColor:Global.white
     },
     body_1: {
         flex: 2,
@@ -126,10 +127,10 @@ const styles = StyleSheet.create({
         height: 110,
         width: 110,
         borderRadius: 20,
-        backgroundColor: Global.white,
+        backgroundColor: Global.inputs_clr,
         justifyContent: 'center',
         alignItems: 'center',
-        borderColor: Global.light_gray,
+        borderColor: Global.inputs_clr,
         borderWidth: 1
     },
     clicked_btn: {

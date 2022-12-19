@@ -9,6 +9,10 @@ function Heading3({ title }) {
  return(<View style={{margin:10}}><Text style={[styles.heading3, { fontWeight:'bold'}]}>{title}</Text></View>)
     
 }
+function Heading2({title}) {
+ return(<Text style={styles.heading2}>{title}</Text>)
+  
+}
 
 function Heading4({ title }) {
  return(<View><Text style={[styles.heading4, { fontWeight:'400'}]}>{title}</Text></View>)
@@ -18,7 +22,8 @@ function Heading4({ title }) {
 export {
     Heading,
     Heading3,
-    Heading4
+    Heading4,
+    Heading2
 }
 
 const styles = StyleSheet.create({

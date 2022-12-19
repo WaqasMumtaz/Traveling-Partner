@@ -25,7 +25,7 @@ function MainNavigation() {
         <Stack.Screen name='Mobile Phone' component={Screens.SignUpWithMobile}/>
         <Stack.Screen name='OTP Screen' component={Screens.OTPScreen}/>
         <Stack.Screen name='Home' component={Screens.Home}/>
-
+        <Stack.Screen name='TaxiStand' component={Screens.TaxiStand} />
       </Stack.Navigator>
   );
 }

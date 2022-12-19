@@ -20,11 +20,10 @@ function EnableLocation() {
         <>
         <Components.TopLogo/>
             <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
-                <View style={styles.body}>
                     <View style={styles.body_1}>
                         <Components.RoundIcon icon={enable_location} />
                         <Components.Heading heading='Enable Location' />
-                        <View style={{ marginTop: 10 }}>
+                        <View style={{ margin: 8 }}>
                             <Components.Paragraph para={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum`} />
                         </View>
                         <View style={{ margin: 15 }} />
@@ -41,7 +40,7 @@ function EnableLocation() {
                             handleSkip={handleNavigation}
                         />
                     </View>
-                </View>
+              
             </SafeAreaView>
         </>
     )

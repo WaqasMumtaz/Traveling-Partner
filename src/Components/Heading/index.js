@@ -29,7 +29,7 @@ export {
 const styles = StyleSheet.create({
     mainHeading:{
         color: '#000',
-        fontSize: 30,
+        fontSize: 25,
         // fontWeight:600
     },
     heading3:{

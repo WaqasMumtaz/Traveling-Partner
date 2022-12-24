@@ -20,6 +20,8 @@ import Banner from "./Banner";
 import ListItem from "./ListItem";
 import BottomTabs from "./BottomTabs";
 import DropDown from "./Dropdown";
+import MainComponent from "./MainComponent";
+import AlertModal from "./AlertModal";
 
 export default {
     ScreensSwiper,
@@ -46,5 +48,7 @@ export default {
     ListItem,
     BottomTabs,
     DropDown,
-    Heading2
+    Heading2,
+    MainComponent,
+    AlertModal
 }

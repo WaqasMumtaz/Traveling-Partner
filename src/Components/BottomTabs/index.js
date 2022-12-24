@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     homeCircle: {
-        backgroundColor: Global.blue,
+        backgroundColor: Global.black_clr,
         height: 60,
         width: 60,
         borderRadius: 60 / 2,

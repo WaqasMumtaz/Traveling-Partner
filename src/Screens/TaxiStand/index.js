@@ -5,8 +5,11 @@ import Global from '../../Global'
 import location from '../../Assets/Icons/location.png'
 import driver from '../../Assets/Icons/man.png';
 import map_img from '../../Assets/map.png';
+import { useNavigation } from "@react-navigation/native";
+
 
 const TaxiStand = () => {
+    let navigation = useNavigation();
     const [enableCity, setEnableCity] = useState(false);
     const [cities, setCities] = useState([
         { label: 'Karachi', value: 'karachi' },
@@ -61,7 +64,7 @@ const TaxiStand = () => {
                         <Components.MainButton
                             title={'Search Taxi'}
                             btn_container_style={styles.btn_container_style}
-                        // handleNavigation={() => navigation.navigate('Home')}
+                            handleNavigation={() => navigation.navigate('Rides')}
                         />
                         </View>
                         <View style={{ flex: 1, marginTop:10 }}>

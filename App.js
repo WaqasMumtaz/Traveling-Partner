@@ -56,7 +56,7 @@ const MyTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: Global.white,
+    background: 'transparent',
   },
 };
 

@@ -11,6 +11,9 @@ import SignUpWithMobile from "./SignUpWithMobile";
 import OTPScreen from './OTPScreen';
 import Home from "./Home";
 import TaxiStand from "./TaxiStand";
+import Rides from "./Rides";
+import RidesDetail from './RidesDetail';
+import BookTaxi from './BookTaxi';
 
 export default {
     AcceptRide,
@@ -25,5 +28,8 @@ export default {
     SignUpWithMobile,
     OTPScreen,
     Home,
-    TaxiStand
+    TaxiStand,
+    Rides,
+    RidesDetail,
+    BookTaxi
 }

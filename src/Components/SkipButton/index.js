@@ -3,9 +3,9 @@ import React from 'react'
 import Global from '../../Global'
 import Gradient from '../GradientBG'
 
-export default function SkipButton({ handleSkip }) {
+export default function SkipButton({ handleSkip, _style }) {
   return (
-    <View style={styles.btn}>
+    <View style={{...styles.btn, ..._style}}>
       <TouchableOpacity onPress={() => handleSkip()}>
         <Gradient _style={styles.skipBtnContainer}>
           <Text style={{ fontWeight: 'bold' }}>Skip</Text>

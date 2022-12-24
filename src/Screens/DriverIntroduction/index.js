@@ -28,7 +28,7 @@ function DriverIntroduction() {
                     <View style={styles.body_1}>
                         <Components.RoundIcon icon={driver} />
                         <Components.Heading heading='Driver Introduction' />
-                        <View style={{ marginTop: 10 }}>
+                        <View style={{ marginTop: 3 }}>
                             <Components.Paragraph para={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum`} />
                         </View>
                     </View>
@@ -42,6 +42,7 @@ function DriverIntroduction() {
                     </View>
                     <Components.SkipButton
                         handleSkip={handleNavigation}
+                        _style={{flex:0.3}}
                     />
                     <Components.AdBanner />
                 </View>
@@ -60,11 +61,12 @@ const styles = StyleSheet.create({
     },
     body: {
         flex: 1,
+        //backgroundColor:'red',
         // marginTop: '35%',
-        margin: 20
+        marginHorizontal: 20
     },
     body_1: {
-        flex: 2,
+        flex: 1.5,
         // backgroundColor: 'red',
         alignItems: 'center',
         justifyContent: 'center',
@@ -73,12 +75,12 @@ const styles = StyleSheet.create({
         flex: 1,
         // backgroundColor: 'green'
     },
-    body_3: {
-        flex: 0.5,
-        alignItems: 'center',
-        justifyContent: 'center',
-        // backgroundColor:'pink'
-    },
+    // body_3: {
+    //     flex: 0.2,
+    //     alignItems: 'center',
+    //     justifyContent: 'center',
+    //     // backgroundColor:'pink'
+    // },
     body_4: {
         flex: 0.6,
         backgroundColor: 'blue'

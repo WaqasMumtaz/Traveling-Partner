@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, StatusBar, ScrollView, Text, View, Image, TouchableOpacity, ImageBackground } from 'react-native'
+import { StyleSheet, StatusBar,SafeAreaView, ScrollView, Text, View, Image, TouchableOpacity, ImageBackground } from 'react-native'
 import Global from '../../Global'
 import Components from '../../Components';
 import MaskGroup from '../../Assets/mask_group.png';
@@ -76,7 +76,7 @@ const Home = () => {
     return (
         <>
             <StatusBar translucent backgroundColor='transparent' barStyle={'light-content'} />
-            <View style={styles.container}>
+            <SafeAreaView style={styles.container}>
                 {/* <Text>Home</Text> */}
                 <View style={{ flex: 1.32 }}>
                     <Image source={MaskGroup} style={{ height: '100%', width: '100%' }} resizeMode='cover' />
@@ -133,7 +133,7 @@ const Home = () => {
                 {/* <Components.Gradient _style={{ flex: 0.32}}>
                     <Text>Bottom Tab</Text>
                 </Components.Gradient> */}
-            </View>
+            </SafeAreaView>
         </>
     )
 }

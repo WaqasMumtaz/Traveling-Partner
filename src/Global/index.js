@@ -11,6 +11,10 @@ export default {
     gradient_1:"#FCE001",
     gradient_2:"#FDB813",
     blue:"#000058",
-    inputs_clr:"#F1F2F7"
-    
+    inputs_clr:"#F1F2F7",
+    green_clr:"#5DD568",
+    borderLine:"#EAECF4",
+    light_pink:"#F8D7E8",
+    light_green:"#D7EEF6",
+    brown_clr:"#F1D4B6"
 }

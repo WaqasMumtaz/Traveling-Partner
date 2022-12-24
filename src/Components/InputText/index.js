@@ -32,7 +32,7 @@ export default function InputText({
         placeholder={placeholder}
         onChangeText={(searchString) => handleChange(name, searchString)}
         underlineColorAndroid="transparent"
-        placeholderTextColor={Global.gray_color}
+        placeholderTextColor={Global.black_clr}
         secureTextEntry={secureTextEntry}
         keyboardType={keyboardType}
         value={value}
@@ -66,8 +66,8 @@ let styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: Global.white,
-    borderColor: Global.border_color,
+    backgroundColor: Global.inputs_clr,
+    borderColor: Global.inputs_clr,
     height: 50,
     borderRadius: 100,
     borderWidth: 1
@@ -95,7 +95,8 @@ let styles = StyleSheet.create({
     paddingLeft: 15,
     marginLeft: 5,
     height: 50,
-    borderRadius: 100
+    borderRadius: 100,
+    color:Global.black_clr
     //backgroundColor:'red',
     // borderTopLeftRadius: 4,
     // borderBottomLeftRadius: 4,

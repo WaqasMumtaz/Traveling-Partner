@@ -26,6 +26,9 @@ function MainNavigation() {
         <Stack.Screen name='OTP Screen' component={Screens.OTPScreen}/>
         <Stack.Screen name='Home' component={Screens.Home}/>
         <Stack.Screen name='TaxiStand' component={Screens.TaxiStand} />
+        <Stack.Screen name='Rides' component={Screens.Rides}/>
+        <Stack.Screen name='RidesDetail' component={Screens.RidesDetail}/>
+        <Stack.Screen name='BookTaxi' component={Screens.BookTaxi} />
       </Stack.Navigator>
   );
 }

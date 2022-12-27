@@ -16,5 +16,6 @@ export default {
     borderLine:"#EAECF4",
     light_pink:"#F8D7E8",
     light_green:"#D7EEF6",
-    brown_clr:"#F1D4B6"
+    brown_clr:"#F1D4B6",
+    light_red:'#EB1933'
 }

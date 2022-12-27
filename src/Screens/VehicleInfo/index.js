@@ -20,27 +20,23 @@ import ImageModal from 'react-native-image-modal';
 import rectangle from '../../Assets/rectangle.png';
 
 
-const PartnerBasicInfo = () => {
+const VehicleInfo = () => {
   let actionSheet = useRef();
-  const [gender, setGender] = useState([
-    { label: 'Male', value: 'male' },
-    { label: 'Female', value: 'female' },
+  const [vehicle, setVehicle] = useState([
+    { label: 'Car', value: 'car' },
+    { label: 'Bike', value: 'bike' },
     { label: 'Other', value: 'other' },
   ]);
-  const [openGender, setOpenGender] = useState(false);
+  const [openVehicle, setOpenVehicle] = useState(false);
   const [authObj, setAuthObj] = useState({
-    first_name: '',
-    last_name: '',
-    email: '',
-    phone: '',
-    cnic: '',
-    cnicType: '',
-    cnicFront: '',
-    cnicBack: '',
-    license: '',
-    licenseFront: '',
-    licenseBack: '',
-    gender: ''
+    vehicle_type: '',
+    model_no: '',
+    vehicle_color: '',
+    vehicle_brand: '',
+    registration_number: '',
+    vehicle: '',
+    vehicleFront: '',
+    vehicleBack: '',
   })
   const [docs, setDocs] = useState({
     cnic: false,
@@ -48,18 +44,14 @@ const PartnerBasicInfo = () => {
   })
 
   const [errorObj, setErrorObj] = useState({
-    first_name: '',
-    last_name: '',
-    email: '',
-    phone: '',
-    cnic: '',
-    cnicType: '',
-    cnicFront: '',
-    cnicBack: '',
-    license: '',
-    licenseFront: '',
-    licenseBack: '',
-    gender: ''
+    vehicle_type: '',
+    model_no: '',
+    vehicle_color: '',
+    vehicle_brand: '',
+    registration_number: '',
+    vehicle: '',
+    vehicleFront: '',
+    vehicleBack: '',
   })
 
   function handleSubmit(params) {
@@ -75,19 +67,6 @@ const PartnerBasicInfo = () => {
     actionSheet.current.show();
     // alert(type);
     handleChange(name, type);
-    if (name == 'cnicType') {
-      setDocs({
-        cnic: true,
-        license: false
-      })
-    }
-    else if (name == 'license') {
-      // alert('License')
-      setDocs({
-        cnic: false,
-        license: true
-      })
-    }
   }
 
 
@@ -101,36 +80,18 @@ const PartnerBasicInfo = () => {
         //console.log('image', image);
         const imgData = new FormData();
         imgData.append('images', { uri: image.path, name: 'photo', type: 'image/jpg' });
-        if (docs.cnic) {
-          if (authObj.cnicType == 'front') {
+          if (authObj.vehicle == 'front') {
             setAuthObj({
               ...authObj,
-              cnicFront: image.path
+              vehicleFront: image.path
             })
           }
-          else if (authObj.cnicType == 'back') {
+          else if (authObj.vehicle == 'back') {
             setAuthObj({
               ...authObj,
-              cnicBack: image.path
+              vehicleBack: image.path
             })
           }
-        }
-        else if (docs.license) {
-          // alert('Selecte Li')
-          if (authObj.license == 'front') {
-            setAuthObj({
-              ...authObj,
-              licenseFront: image.path
-            })
-          }
-          else if (authObj.license == 'back') {
-            setAuthObj({
-              ...authObj,
-              licenseBack: image.path
-            })
-          }
-        }
-
       })
       //console.log('gallery image >>>', profileImage)
 
@@ -143,43 +104,21 @@ const PartnerBasicInfo = () => {
         console.log('Camera Pic >>', image);
         const imgData = new FormData();
         imgData.append('images', { uri: image.path, name: 'photo', type: 'image/jpg' });
-        if (docs.cnic) {
-          if (authObj.cnicType == 'front') {
+        if (authObj.vehicle == 'front') {
             setAuthObj({
               ...authObj,
-              cnicFront: image.path
+              vehicleFront: image.path
             })
           }
-          else if (authObj.cnicType == 'back') {
+          else if (authObj.vehicle == 'back') {
             setAuthObj({
               ...authObj,
-              cnicBack: image.path
+              vehicleBack: image.path
             })
           }
-        }
-        else if (docs.license) {
-          if (authObj.license == 'front') {
-            setAuthObj({
-              ...authObj,
-              licenseFront: image.path
-            })
-          }
-          else if (authObj.license == 'back') {
-            setAuthObj({
-              ...authObj,
-              licenseBack: image.path
-            })
-          }
-        }
 
       });
 
-    }
-    else {
-      setDocs({
-        cnic: false,
-        license: false
-      })
     }
   }
 
@@ -203,85 +142,69 @@ const PartnerBasicInfo = () => {
         >
         <View style={{flex:1, marginHorizontal: 15 }}>
           <View style={{ alignItems: 'center' }}>
-            <Components.Heading3 title={'Partner Basic Info'} />
+            <Components.Heading3 title={'Vehicle Info'} />
           </View>
-          <Components.InputText
-            placeholder="First Name"
-            icon="account-circle"
-            name={'first_name'}
-            handleChange={(name, value) => handleChange(name, value)}
-            value={authObj.first_name}
-          />
-          {errorObj.first_name ? (
-            <Text style={styles.error}>{errorObj.first_name}</Text>
-          ) : (
-            ''
-          )}
-          <View style={{ margin: 10 }} />
-          <Components.InputText
-            placeholder="Last Name"
-            icon="account-circle"
-            name={'last_name'}
-            handleChange={(name, value) => handleChange(name, value)}
-            value={authObj.last_name}
-          />
-          {errorObj.last_name ? (
-            <Text style={styles.error}>{errorObj.last_name}</Text>
-          ) : (
-            ''
-          )}
-          <View style={{ margin: 10 }} />
           <Components.DropDown
-            placeholder={'Gender'}
-            list={gender}
-            onChange={(value) => handleChange('gender', value())}
-            value={authObj.gender}
+            placeholder={'Vehicle Type'}
+            list={vehicle}
+            onChange={(value) => handleChange('vehicle_type', value())}
+            value={authObj.vehicle_type}
             dropDownMaxHeight={150}
-            open={openGender}
+            open={openVehicle}
             style={styles.dropdown_inner_style}
             mainContainer_style={styles.container_style}
-            setOpen={() => setOpenGender(openGender => !openGender)}
+            setOpen={() => setOpenVehicle(openVehicle => !openVehicle)}
             listMode="SCROLLVIEW"
           />
           <View style={{ margin: 10 }} />
           <Components.InputText
-            placeholder="Email (Optional)"
-            icon="account-circle"
-            name={'email'}
+            placeholder="Model No"
+            name={'model_no'}
             handleChange={(name, value) => handleChange(name, value)}
-            value={authObj.email}
+            value={authObj.model_no}
           />
-          {errorObj.email ? (
-            <Text style={styles.error}>{errorObj.email}</Text>
+          {errorObj.model_no ? (
+            <Text style={styles.error}>{errorObj.model_no}</Text>
           ) : (
             ''
           )}
           <View style={{ margin: 10 }} />
           <Components.InputText
-            placeholder="Phone"
-            icon="account-circle"
-            name={'phone'}
+            placeholder="Vehicle Color"
+            name={'vehicle_color'}
             handleChange={(name, value) => handleChange(name, value)}
-            value={authObj.phone}
+            value={authObj.vehicle_color}
           />
-          {errorObj.phone ? (
-            <Text style={styles.error}>{errorObj.phone}</Text>
+          {errorObj.vehicle_color ? (
+            <Text style={styles.error}>{errorObj.vehicle_color}</Text>
           ) : (
             ''
           )}
           <View style={{ margin: 10 }} />
           <Components.InputText
-            placeholder="CNIC Number"
-            icon="account-circle"
-            name={'cnic'}
+            placeholder="Vehicle Brand"
+            name={'vehicle_brand'}
             handleChange={(name, value) => handleChange(name, value)}
-            value={authObj.cnic}
+            value={authObj.vehicle_brand}
           />
-          {errorObj.cnic ? (
-            <Text style={styles.error}>{errorObj.cnic}</Text>
+          {errorObj.vehicle_brand ? (
+            <Text style={styles.error}>{errorObj.vehicle_brand}</Text>
           ) : (
             ''
           )}
+          <View style={{ margin: 10 }} />
+          <Components.InputText
+            placeholder="Registration Number"
+            name={'registration_number'}
+            handleChange={(name, value) => handleChange(name, value)}
+            value={authObj.registration_number}
+          />
+          {errorObj.registration_number ? (
+            <Text style={styles.error}>{errorObj.registration_number}</Text>
+          ) : (
+            ''
+          )}
+          <View style={{ margin: 10 }} />
           <View style={{ marginHorizontal: 15 }}>
             <Text>Upload your documents</Text>
           </View>
@@ -289,31 +212,31 @@ const PartnerBasicInfo = () => {
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
               <View style={{ flex: 1 }}>
                 <View style={{ marginVertical: 10 }}>
-                  <Text>CNIC Front</Text>
+                  <Text>Front</Text>
                 </View>
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                  {authObj.cnicType === 'front' ?
+                  {authObj.vehicle === 'front' ?
                     <ImageBackground
                       source={rectangle}
                       resizeMode="cover"
                       style={styles.icon_container}>
                       <TouchableOpacity
-                        onPress={() => openSheet('cnicType', 'front')}
+                        onPress={() => openSheet('vehicle', 'front')}
                         style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
                       >
-                        <IonicIcon name='person-circle-outline' size={30} />
+                        <IonicIcon name='document-outline' size={30} />
                       </TouchableOpacity>
                     </ImageBackground>
                     :
                     <TouchableOpacity
-                      onPress={() => openSheet('cnicType', 'front')}
+                      onPress={() => openSheet('vehicle', 'front')}
                       style={styles.unClickedBtn}
                     >
-                      <IonicIcon name='person-circle-outline' size={30} color={Global.gray_color}/>
+                      <IonicIcon name='document-outline' size={30} color={Global.gray_color}/>
                     </TouchableOpacity>
                   }
                   <View>
-                    {authObj.cnicFront == '' ?
+                    {authObj.vehicleFront == '' ?
                       <Components.SkeltonLoader
                       //  SkeltonLoading={SkeltonLoading}
                       />
@@ -326,7 +249,7 @@ const PartnerBasicInfo = () => {
                           height: 55,
                         }}
                         source={{
-                          uri: authObj.cnicFront,
+                          uri: authObj.vehicleFront,
                           // uri: 'file:///var/mobile/Containers/Data/Application/19B7CA05-94B4-464E-A69D-B580EEC265B6/Documents/1622008112347.png'
                         }}
                       />
@@ -334,21 +257,21 @@ const PartnerBasicInfo = () => {
                   </View>
                 </View>
                 <View>
-                  <Text style={{ fontSize: 12 }}>Identification Card</Text>
+                  <Text style={{ fontSize: 12 }}>Vehicle Documents</Text>
                 </View>
               </View>
               <View style={{ flex: 1 }}>
                 <View style={{ marginVertical: 10 }}>
-                  <Text>CNIC Back</Text>
+                  <Text>Back</Text>
                 </View>
                 <View style={{ flexDirection: 'row', alignItems: "center" }}>
-                {authObj.cnicType === 'back' ?
+                {authObj.vehicle === 'back' ?
                     <ImageBackground
                       source={rectangle}
                       resizeMode="cover"
                       style={styles.icon_container}>
                       <TouchableOpacity
-                        onPress={() => openSheet('cnicType', 'back')}
+                        onPress={() => openSheet('vehicle', 'back')}
                         style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
                       >
                         <IonicIcon name='person-circle-outline' size={30} />
@@ -356,14 +279,14 @@ const PartnerBasicInfo = () => {
                     </ImageBackground>
                     :
                     <TouchableOpacity
-                      onPress={() => openSheet('cnicType', 'back')}
+                      onPress={() => openSheet('vehicle', 'back')}
                       style={styles.unClickedBtn}
                     >
-                      <IonicIcon name='person-circle-outline' size={30} color={Global.gray_color}/>
+                      <IonicIcon name='document-outline' size={30} color={Global.gray_color}/>
                     </TouchableOpacity>
                   }
                   <View>
-                    {authObj.cnicBack == '' ?
+                    {authObj.vehicleBack == '' ?
                       <Components.SkeltonLoader
                       // SkeltonLoading={SkeltonLoading}
                       />
@@ -376,7 +299,7 @@ const PartnerBasicInfo = () => {
                           height: 55,
                         }}
                         source={{
-                          uri: authObj.cnicBack,
+                          uri: authObj.vehicleBack,
                           // uri: 'file:///var/mobile/Containers/Data/Application/19B7CA05-94B4-464E-A69D-B580EEC265B6/Documents/1622008112347.png'
                         }}
                       />
@@ -384,7 +307,7 @@ const PartnerBasicInfo = () => {
                   </View>
                 </View>
                 <View>
-                  <Text style={{ fontSize: 12 }}>Identification Card</Text>
+                  <Text style={{ fontSize: 12 }}>Vehicle Documents</Text>
                 </View>
               </View>
             </View>
@@ -421,26 +344,7 @@ const PartnerBasicInfo = () => {
   )
 }
 
-export default PartnerBasicInfo;
-
-function HeaderText() {
-  return (
-    <>
-      <Text style={{ fontSize: 20, fontWeight: '500' }}>Partner</Text>
-      <Text style={{ fontSize: 30, fontWeight: '700' }}>Basic Info</Text>
-    </>
-  )
-}
-
-function SkeltonLoading() {
-  return (
-    <View style={{ width: 70 }}>
-      <View style={styles.imgLoaderStyle} />
-      <View style={styles.imgLoaderStyle} />
-      <View style={styles.imgLoaderStyle} />
-    </View>
-  )
-}
+export default VehicleInfo;
 
 const styles = StyleSheet.create({
   container: {

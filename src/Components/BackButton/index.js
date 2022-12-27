@@ -25,8 +25,8 @@ const styles = StyleSheet.create({
         alignItems:'center',
     },
     title: {
-        textTransform: 'uppercase',
-        color:Global.main_color,
+        //textTransform: 'uppercase',
+        // color:Global.main_color,
         fontSize:15,
         fontWeight:'600',
         textDecorationLine:'underline'

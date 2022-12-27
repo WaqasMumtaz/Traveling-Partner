@@ -14,6 +14,11 @@ import TaxiStand from "./TaxiStand";
 import Rides from "./Rides";
 import RidesDetail from './RidesDetail';
 import BookTaxi from './BookTaxi';
+import DriverLicenseInfo from "./DriverLicenseInfo";
+import VehicleInfo from "./VehicleInfo";
+import DriverTaxiStand from "./DriverTaxiStand";
+import DriverRides from "./DriverRides";
+import DriverRidesDetail from "./DriverRidesDetails";
 
 export default {
     AcceptRide,
@@ -31,5 +36,10 @@ export default {
     TaxiStand,
     Rides,
     RidesDetail,
-    BookTaxi
+    BookTaxi,
+    DriverLicenseInfo,
+    VehicleInfo,
+    DriverTaxiStand,
+    DriverRides,
+    DriverRidesDetail
 }

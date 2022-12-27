@@ -49,7 +49,36 @@ const BookTaxi = () => {
     }
 
     function submitTaxiForm(params) {
-        setModalVisible(true)
+        const {
+            address,
+            city,
+            pickup_point,
+            phone_number,
+            drop_of_point,
+            date,
+            time,
+            total_passenger,
+            language_no,
+            pets,
+            price
+        } = authObj;
+        let error = {};
+        if(address == '') error.address = 'Address is required';
+        if(city == '') error.city = 'city is required';
+        if(pickup_point == '') error.pickup_point = 'PickUp Point is required';
+        if(drop_of_point == '') error.drop_of_point = 'DropOf Point is required';
+        if(date == '') error.date = 'Date is required';
+        if(time == '') error.time = 'Time is required';
+        if(total_passenger == '') error.total_passenger = 'Total Passenger is required';
+        if(language_no == '') error.language_no = 'Language No is required';
+        if(pets == '') error.pets = 'Pets is required';
+        if(price == '') error.price = 'Price is required';
+        
+        setErrorObj(error);
+        if(Object.keys(error).length == 0) {
+            setModalVisible(true)
+        }
+
 
     }
 
@@ -210,8 +239,8 @@ const BookTaxi = () => {
                             <View style={[styles.icons, { backgroundColor: Global.light_green }]}>
                                 <IonicIcon name='checkmark' size={35} color={Global.green_clr} />
                             </View>
-                            <View style={{margin:15}}>
-                                <Text style={{ fontWeight: 'bold' ,fontSize:14}}>You have successfully confirm your ride</Text>
+                            <View style={{ margin: 15 }}>
+                                <Text style={{ fontWeight: 'bold', fontSize: 14 }}>You have successfully confirm your ride</Text>
                             </View>
                         </>
                         :
@@ -272,6 +301,11 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         borderWidth: 1,
         // marginHorizontal: 25
+    },
+    error:{
+        textAlign: 'center',
+        color: 'red',
+    //   margin:5
     },
     alertBtns: {
         marginTop: 20,

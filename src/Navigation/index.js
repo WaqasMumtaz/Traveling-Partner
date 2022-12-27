@@ -29,6 +29,11 @@ function MainNavigation() {
         <Stack.Screen name='Rides' component={Screens.Rides}/>
         <Stack.Screen name='RidesDetail' component={Screens.RidesDetail}/>
         <Stack.Screen name='BookTaxi' component={Screens.BookTaxi} />
+        <Stack.Screen name='DriverLicenseInfo' component={Screens.DriverLicenseInfo} />
+        <Stack.Screen name='VehicleInfo' component={Screens.VehicleInfo} />
+        <Stack.Screen name='DriverTaxiStand' component={Screens.DriverTaxiStand} />
+        <Stack.Screen name='DriverRides' component={Screens.DriverRides}/>
+        <Stack.Screen name='DriverRidesDetal' component={Screens.DriverRidesDetail} />
       </Stack.Navigator>
   );
 }

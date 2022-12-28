@@ -26,7 +26,7 @@ function DriverIntroduction() {
                 </View> */}
                 <View style={styles.body}>
                     <View style={styles.body_1}>
-                        <Components.RoundIcon icon={driver} />
+                        <Components.RoundIcon icon={driver}  _style={{height:80}}/>
                         <Components.Heading heading='Driver Introduction' />
                         <View style={{ marginTop: 3 }}>
                             <Components.Paragraph para={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum`} />

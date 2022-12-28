@@ -4,6 +4,7 @@ import enable_location from '../../Assets/location.png';
 import Components from '../../Components';
 import Global from '../../Global';
 import { useNavigation } from '@react-navigation/native';
+import IonicIcon from 'react-native-vector-icons'
 
 function EnableLocation() {
     const navigation = useNavigation();
@@ -21,7 +22,7 @@ function EnableLocation() {
         <Components.TopLogo/>
             <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
                     <View style={styles.body_1}>
-                        <Components.RoundIcon icon={enable_location} />
+                        <Components.RoundIcon icon='location' screen={'location'}/>
                         <Components.Heading heading='Enable Location' />
                         <View style={{ margin: 8 }}>
                             <Components.Paragraph para={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum`} />

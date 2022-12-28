@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, StatusBar,SafeAreaView, ScrollView, Text, View, Image, TouchableOpacity, ImageBackground } from 'react-native'
+import { StyleSheet, StatusBar, SafeAreaView, ScrollView, Text, View, Image, TouchableOpacity, ImageBackground } from 'react-native'
 import Global from '../../Global'
 import Components from '../../Components';
 import MaskGroup from '../../Assets/mask_group.png';
 import local_taxi from '../../Assets/local_taxi.png';
 import delivery from '../../Assets/delivery.png';
-import pool from '../../Assets/pool_ride.png';
+import pool from '../../Assets/users.png';
 import logistic from '../../Assets/logistic.png';
-import location_taxi from '../../Assets/location_taxi.png';
+import location_taxi from '../../Assets/trip.png';
 import tracking_taxi from '../../Assets/tracking_taxi.png';
 import rectangle from '../../Assets/rectangle.png'
 import { useNavigation } from "@react-navigation/native";
-
+import IonicIcon from 'react-native-vector-icons/Ionicons'
+    
 
 const Home = () => {
     let navigation = useNavigation();
@@ -19,7 +20,7 @@ const Home = () => {
         {
             id: 1,
             name: 'Taxi Stands',
-            icon: local_taxi,
+            icon: "car-outline",
             selected: false
         },
         {
@@ -55,7 +56,7 @@ const Home = () => {
     ]
     const [taxiData, setTaxiData] = useState(data);
 
-    function handleClicked(name , id) {
+    function handleClicked(name, id) {
         console.log('Name Navigation >>>', name);
         let arr = [...data];
         // let indx = arr.findIndex(item => item.id == id);
@@ -67,8 +68,8 @@ const Home = () => {
         let newArr = arr.map(item => (item.id == id ? { ...item, selected: true } : { ...item, selected: false }))
         console.log('New Arr >>>', newArr);
         setTaxiData(newArr);
-        if(name === 'Taxi Stands'){
-          navigation.replace('TaxiStand');
+        if (name === 'Taxi Stands') {
+            navigation.replace('TaxiStand');
         }
     }
 
@@ -81,23 +82,33 @@ const Home = () => {
                 <View style={{ flex: 1.32 }}>
                     <Image source={MaskGroup} style={{ height: '100%', width: '100%' }} resizeMode='cover' />
                 </View>
-                <View style={{ flex: 2,backgroundColor:Global.main_color}}>
-                    <ScrollView style={{ flex: 2 ,backgroundColor:Global.white, borderBottomLeftRadius:25, borderBottomRightRadius:25}}>
-                        <View style={{ flex: 3, marginHorizontal:10 }}>
+                <View style={{ flex: 2, backgroundColor: Global.main_color }}>
+                    <ScrollView style={{ flex: 2, backgroundColor: Global.white, borderBottomLeftRadius: 25, borderBottomRightRadius: 25 }}>
+                        <View style={{ flex: 3, marginHorizontal: 10 }}>
                             <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
                                 {taxiData.map((item, indx) => {
                                     return (
                                         <View key={indx} style={{ width: '33.33%', justifyContent: 'center', alignItems: 'center', padding: 10 }}>
                                             <TouchableOpacity
                                                 style={item.selected ? null : styles.iconsStyle}
-                                                onPress={() => handleClicked(item.name ,item.id)}
+                                                onPress={() => handleClicked(item.name, item.id)}
                                             >
                                                 {item.selected ?
                                                     <ImageBackground source={rectangle} resizeMode='cover' style={styles.selectedOption}>
-                                                        <Image source={item.icon} />
+                                                        {item.name === 'Taxi Stands' ?
+                                                            <IonicIcon name="car-outline" size={27}/>
+                                                            :
+                                                            <Image source={item.icon} style={{ height: 27, width: 27 }} />
+                                                        }
                                                     </ImageBackground>
                                                     :
-                                                    <Image source={item.icon} />
+                                                    <>
+                                                        {item.name === 'Taxi Stands' ?
+                                                            <IonicIcon name="car-outline" size={27} />
+                                                            :
+                                                            <Image source={item.icon} style={{ height: 30, width: 30 }} />
+                                                        }
+                                                    </>
                                                 }
 
                                             </TouchableOpacity>
@@ -109,7 +120,7 @@ const Home = () => {
                                 })}
                             </View>
                         </View>
-                        <View style={{ flex: 1 , marginVertical:10}}>
+                        <View style={{ flex: 1, marginVertical: 10 }}>
                             <Components.Banner />
                         </View>
                         <Components.ListItem
@@ -124,12 +135,12 @@ const Home = () => {
                             title={'Car'}
                             des={'Aqua'}
                         />
-                        <View style={{ flex: 1, margin:15 }}>
+                        <View style={{ flex: 1, margin: 15 }}>
                             <Components.AdBanner />
                         </View>
                     </ScrollView>
                 </View>
-                <Components.BottomTabs/>
+                <Components.BottomTabs />
                 {/* <Components.Gradient _style={{ flex: 0.32}}>
                     <Text>Bottom Tab</Text>
                 </Components.Gradient> */}

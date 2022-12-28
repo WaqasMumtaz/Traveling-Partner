@@ -78,9 +78,9 @@ const App = () => {
       <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
         {/* <Components.TopLogo/> */}
         <NavigationContainer theme={MyTheme}>
-          {/* <MainNavigation /> */}
+          <MainNavigation />
           {/* <PartnerBasicInfo/> */}
-          <DriverRidesDetail/>
+          {/* <DriverRidesDetail/> */}
         </NavigationContainer>
       </SafeAreaView>
     </>

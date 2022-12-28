@@ -15,7 +15,7 @@ function TrackingRealtime() {
             <Components.TopLogo />
             <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
                     <View style={styles.body_1}>
-                        <Components.RoundIcon icon={tracking_location} />
+                        <Components.RoundIcon icon={tracking_location} _style={{width:82}}/>
                         <Components.Heading heading='Tracking Realtime' />
                         <View style={{ margin: 10 }}>
                             <Components.Paragraph para={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum`} />

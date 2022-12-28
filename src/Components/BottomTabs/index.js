@@ -12,14 +12,16 @@ import IonicIcon from 'react-native-vector-icons/Ionicons';
 
 const BottomTabs = () => {
     return (
-        <Gradient _style={{height:65}}>
+        <Gradient _style={{ height: 65 }}>
             <View style={styles.container}>
                 <TouchableOpacity style={styles.form}>
-                    <Image source={chat} style={styles.icons} />
+                    <IonicIcon name='chatbubble-ellipses-outline' size={30} />
+                    {/* <Image source={chat} style={styles.icons} /> */}
                     <Text style={styles.title}>Chat</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.form}>
-                    <Image source={help} style={styles.icons} />
+                    <IonicIcon name='help-circle-outline' size={30} />
+                    {/* <Image source={help} style={styles.icons} /> */}
                     <Text style={styles.title}>Help</Text>
                 </TouchableOpacity>
                 <View style={{ position: 'relative' }}>
@@ -32,11 +34,12 @@ const BottomTabs = () => {
                     </View>
                 </View>
                 <TouchableOpacity style={styles.form}>
-                    <Image source={activity} style={styles.icons} />
+                {/* <IonicIcon name='help-circle-outline' size={20} /> */}
+                    <Image source={activity} style={styles.icons} resizeMode='contain' />
                     <Text style={styles.title}>Activity</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.form}>
-                    <Image source={user} style={styles.icons} />
+                    <Image source={user} style={styles.icons} resizeMode='contain'/>
                     <Text style={styles.title}>Profile</Text>
                 </TouchableOpacity>
             </View>
@@ -76,13 +79,13 @@ const styles = StyleSheet.create({
         height: 27,
         width: 27
     },
-    title:{
-     fontSize:11,
-     fontWeight:'bold',
-     marginTop:3
+    title: {
+        fontSize: 11,
+        fontWeight: 'bold',
+        marginTop: 3
     },
-    form:{
-        justifyContent:'center',
-        alignItems:'center',
+    form: {
+        justifyContent: 'center',
+        alignItems: 'center',
     }
 })

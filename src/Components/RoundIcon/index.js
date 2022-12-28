@@ -1,8 +1,10 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
 import rectangle from '../../Assets/rectangle.png'
+import Icon from 'react-native-vector-icons/Ionicons'
 
-const RoundIcon = ({ icon }) => {
+
+const RoundIcon = ({ icon, _style, screen }) => {
     return (
         <View style={styles.container}>
             <Image
@@ -11,7 +13,11 @@ const RoundIcon = ({ icon }) => {
                 resizeMode='cover'
             />
             <View style={styles.logo}>
-                <Image source={icon} resizeMode='cover' />
+                {screen === 'location' ? 
+                 <Icon name={'location-outline'} size={85} />
+                 :
+                 <Image source={icon} resizeMode='cover' style={{...styles.icon, ..._style}}/>
+                }
             </View>
         </View>
     )
@@ -27,10 +33,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         position: 'absolute',
-        zIndex: 1,
+        zIndex: 1,  
         top: 30,
         right: 30,
         left: 30,
         bottom: 30,
+    },
+    icon:{
+        // height:49,
+        width:80
     }
 })

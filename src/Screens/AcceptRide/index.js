@@ -16,7 +16,7 @@ function AcceptRide() {
         <Components.TopLogo/>
         <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
                 <View style={styles.body_1}>
-                    <Components.RoundIcon icon={taxiIcon} />
+                    <Components.RoundIcon icon={taxiIcon} _style={{height:50}}/>
                     <Components.Heading heading='Accept a Ride' />
                     <View style={{ margin: 10 }}>
                         <Components.Paragraph para={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum`} />

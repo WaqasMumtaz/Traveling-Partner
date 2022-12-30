@@ -21,6 +21,10 @@ const DriverTaxiStand = () => {
         })
     }
 
+    function handleRides() {
+        navigation.navigate('DriverRides');
+    }
+
     return (
         <Components.MainComponent>
             <ScrollView contentContainerStyle={{ flexGrow: 1 }} >
@@ -47,7 +51,7 @@ const DriverTaxiStand = () => {
                     </View>
                     <View style={{ alignItems: 'center' , marginTop:20 }}>
                         <Components.Gradient _style={{borderRadius:100, height:55}}>
-                            <TouchableOpacity style={styles.commingRidesBtn}>
+                            <TouchableOpacity style={styles.commingRidesBtn} onPress={handleRides}>
                                 <Text>Comming Rides</Text>
                             </TouchableOpacity>
                         </Components.Gradient>

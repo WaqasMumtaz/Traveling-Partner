@@ -100,7 +100,8 @@ export default function OTPScreen() {
                 <Components.MainButton
                     title={'Verify Now'}
                     btn_container_style={styles.btn_container_style}
-                    handleNavigation={() => navigation.navigate('Home')}
+                    handleNavigation={()=> navigation.navigate('SignUp')}
+                    //handleNavigation={() => navigation.navigate('Home')}
                 />
                 <View style={{ margin: 20 }} />
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>

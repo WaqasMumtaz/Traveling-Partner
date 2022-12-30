@@ -12,7 +12,9 @@ import tracking_taxi from '../../Assets/tracking_taxi.png';
 import rectangle from '../../Assets/rectangle.png'
 import { useNavigation } from "@react-navigation/native";
 import IonicIcon from 'react-native-vector-icons/Ionicons'
-    
+import Swiper from "react-native-swiper";
+
+
 
 const Home = () => {
     let navigation = useNavigation();
@@ -68,9 +70,11 @@ const Home = () => {
         let newArr = arr.map(item => (item.id == id ? { ...item, selected: true } : { ...item, selected: false }))
         console.log('New Arr >>>', newArr);
         setTaxiData(newArr);
-        if (name === 'Taxi Stands') {
-            navigation.replace('TaxiStand');
+        if (name === 'Trip') {
+            navigation.navigate('RidesDetail');
+            // navigation.replace('TaxiStand');
         }
+        else if(name === 'Taxi Stands') navigation.navigate('DriverTaxiStand');
     }
 
 
@@ -79,10 +83,25 @@ const Home = () => {
             <StatusBar translucent backgroundColor='transparent' barStyle={'light-content'} />
             <SafeAreaView style={styles.container}>
                 {/* <Text>Home</Text> */}
-                <View style={{ flex: 1.32 }}>
-                    <Image source={MaskGroup} style={{ height: '100%', width: '100%' }} resizeMode='cover' />
+                <View style={{ flex: 1.8 }}>
+                    <Swiper
+                        style={styles.wrapper}
+                        showsButtons={false}
+                        activeDotColor={Global.main_color}
+                    >
+                        <View style={styles.slide1}>
+                        <Image source={MaskGroup} style={{ height: '100%', width: '100%' }} resizeMode='cover' />
+                        </View>
+                        <View style={styles.slide2}>
+                        <Image source={MaskGroup} style={{ height: '100%', width: '100%' }} resizeMode='cover' />
+                        </View>
+                        <View style={styles.slide3}>
+                        <Image source={MaskGroup} style={{ height: '100%', width: '100%' }} resizeMode='cover' />
+                        </View>
+                    </Swiper>
+                    {/* <Image source={MaskGroup} style={{ height: '100%', width: '100%' }} resizeMode='cover' /> */}
                 </View>
-                <View style={{ flex: 2, backgroundColor: Global.main_color }}>
+                <View style={{ flex: 2.8, backgroundColor: Global.main_color, marginTop:15 }}>
                     <ScrollView style={{ flex: 2, backgroundColor: Global.white, borderBottomLeftRadius: 25, borderBottomRightRadius: 25 }}>
                         <View style={{ flex: 3, marginHorizontal: 10 }}>
                             <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
@@ -96,7 +115,7 @@ const Home = () => {
                                                 {item.selected ?
                                                     <ImageBackground source={rectangle} resizeMode='cover' style={styles.selectedOption}>
                                                         {item.name === 'Taxi Stands' ?
-                                                            <IonicIcon name="car-outline" size={27}/>
+                                                            <IonicIcon name="car-outline" size={27} />
                                                             :
                                                             <Image source={item.icon} style={{ height: 27, width: 27 }} />
                                                         }
@@ -171,5 +190,29 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: 'center'
     },
+    wrapper: {},
+    slide1: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#9DD6EB'
+    },
+    slide2: {
+        flex: 1,
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        // backgroundColor: '#97CAE5'
+    },
+    slide3: {
+        flex: 1,
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        // backgroundColor: '#92BBD9'
+    },
+    text: {
+        color: '#fff',
+        fontSize: 30,
+        fontWeight: 'bold'
+    }
 
 })

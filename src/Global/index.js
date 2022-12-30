@@ -17,5 +17,6 @@ export default {
     light_pink:"#F8D7E8",
     light_green:"#D7EEF6",
     brown_clr:"#F1D4B6",
-    light_red:'#EB1933'
+    light_red:'#EB1933',
+    video_url:"https://vjs.zencdn.net/v/oceans.mp4"
 }

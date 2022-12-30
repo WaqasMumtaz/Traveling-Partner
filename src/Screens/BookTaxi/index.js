@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, ScrollView,StatusBar, TouchableOpacity } from 'react-native'
 import Components from '../../Components'
 import Global from '../../Global'
 import IonicIcon from 'react-native-vector-icons/Ionicons';
+import { useNavigation } from '@react-navigation/native';
 
 
 const BookTaxi = () => {
     const [modalVisible, setModalVisible] = useState(false);
     const [dataSaved, setDataSaved] = useState(false);
+    const navigation = useNavigation();
 
     const [authObj, setAuthObj] = useState({
         address: '',
@@ -45,7 +47,8 @@ const BookTaxi = () => {
     }
 
     function closeModal() {
-        setModalVisible(false)
+        setModalVisible(false);
+        setDataSaved(false);
     }
 
     function submitTaxiForm(params) {
@@ -76,13 +79,21 @@ const BookTaxi = () => {
         
         setErrorObj(error);
         if(Object.keys(error).length == 0) {
+
             setModalVisible(true)
         }
 
 
     }
 
+    function handleConfirmRide() {
+        setDataSaved(true);
+        navigation.navigate('Rides');
+    }
+
     return (
+        <>
+        <StatusBar barStyle='dark-content' backgroundColor='#fff' />
         <Components.MainComponent>
             <ScrollView contentContainerStyle={{ flexGrow: 1 }} >
                 <View style={{ alignItems: 'center' }}>
@@ -251,7 +262,7 @@ const BookTaxi = () => {
                             <View style={styles.alertBtns}>
                                 <Components.Gradient _style={styles.btn_container_style}>
                                     <TouchableOpacity
-                                        onPress={() => setDataSaved(true)}
+                                        onPress={() => handleConfirmRide()}
                                         style={{
                                             flex: 1,
                                             //  backgroundColor: 'red',
@@ -263,7 +274,7 @@ const BookTaxi = () => {
                                     </TouchableOpacity>
                                 </Components.Gradient>
                                 <TouchableOpacity
-                                    onPress={() => console.log('reject')}
+                                    onPress={() => setModalVisible(false)}
                                     style={{
                                         flex: 1,
                                         backgroundColor: Global.inputs_clr,
@@ -284,7 +295,7 @@ const BookTaxi = () => {
                 </View>
             </Components.AlertModal>
         </Components.MainComponent>
-
+       </>
     )
 }
 

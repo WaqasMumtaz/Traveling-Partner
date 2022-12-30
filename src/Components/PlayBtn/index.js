@@ -4,10 +4,10 @@ import Gradient from '../GradientBG'
 import IonicIcon from 'react-native-vector-icons/Ionicons';
 import Global from '../../Global';
 
-const PlayButton = () => {
+const PlayButton = ({ playBtn }) => {
     return (
         <Gradient _style={styles.playBtnContainer}>
-            <TouchableOpacity style={styles.playBtn}>
+            <TouchableOpacity style={styles.playBtn} onPress={()=> playBtn()}>
                 <IonicIcon name='play-outline' size={35} color={Global.black_clr} />
             </TouchableOpacity>
         </Gradient>

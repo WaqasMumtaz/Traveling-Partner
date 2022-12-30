@@ -8,9 +8,11 @@ import activity from '../../Assets/Icons/activity.png';
 import chat from '../../Assets/Icons/chat.png';
 import user from '../../Assets/Icons/user.png';
 import IonicIcon from 'react-native-vector-icons/Ionicons';
+import { useNavigation } from '@react-navigation/native';
 
 
-const BottomTabs = () => {
+const BottomTabs = ({ handleNavigation }) => {
+    const navigation = useNavigation();
     return (
         <Gradient _style={{ height: 65 }}>
             <View style={styles.container}>
@@ -26,7 +28,7 @@ const BottomTabs = () => {
                 </TouchableOpacity>
                 <View style={{ position: 'relative' }}>
                     <View style={styles.homeContainer}>
-                        <TouchableOpacity style={styles.homeCircle}>
+                        <TouchableOpacity style={styles.homeCircle} onPress={()=> navigation.navigate('Home')}>
                             <IonicIcon name='home-outline' size={25} color={Global.white} />
                             {/* <Image source={home} style={{width:26,height:26}}/> */}
                             <Text style={{ color: Global.white, fontSize: 12, margin: 3 }}>Home</Text>

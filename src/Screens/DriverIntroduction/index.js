@@ -8,13 +8,21 @@ import IonicIcon from 'react-native-vector-icons/Ionicons';
 
 function DriverIntroduction() {
     const navigation = useNavigation();
+    const [videoModal, setVideoModal] = useState(false);
+
 
     const handleNavigation = () => {
-        navigation.navigate('SignUp');
+        //navigation.navigate('SignUp');
+        navigation.navigate('Mobile Phone')
+
     }
 
-    const handleBack = () => {
-        navigation.goBack()
+    const handleVideoPlayer = () => {
+        setVideoModal(false)
+    }
+
+    function visibleVideoModal() {
+        setVideoModal(true)
     }
 
     return (
@@ -26,26 +34,32 @@ function DriverIntroduction() {
                 </View> */}
                 <View style={styles.body}>
                     <View style={styles.body_1}>
-                        <Components.RoundIcon icon={driver}  _style={{height:80}}/>
+                        <Components.RoundIcon icon={driver} _style={{ height: 80 }} />
                         <Components.Heading heading='Driver Introduction' />
                         <View style={{ marginTop: 3 }}>
                             <Components.Paragraph para={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac vestibulum`} />
                         </View>
                     </View>
+
                     <View style={styles.body_2}>
                         <Components.TaxiGroup
                             _style={{ alignItems: 'center', justifyContent: "center" }}
                         >
-                            <Components.PlayButton />
+                            <Components.PlayButton playBtn={visibleVideoModal} />
                         </Components.TaxiGroup>
 
                     </View>
+                
                     <Components.SkipButton
                         handleSkip={handleNavigation}
-                        _style={{flex:0.3}}
+                        _style={{ flex: 0.3 }}
                     />
                     <Components.AdBanner />
                 </View>
+                <Components.VideoPlayerModal
+                    visible={videoModal}
+                    handleVideoPlayer={handleVideoPlayer}
+                />
             </SafeAreaView>
         </>
     )

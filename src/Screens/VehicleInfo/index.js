@@ -18,10 +18,14 @@ import ActionSheet from 'react-native-actionsheet';
 import ImagePicker from 'react-native-image-crop-picker';
 import ImageModal from 'react-native-image-modal';
 import rectangle from '../../Assets/rectangle.png';
+import { useNavigation } from '@react-navigation/native';
+
 
 
 const VehicleInfo = () => {
   let actionSheet = useRef();
+  let navigation = useNavigation();
+
   const [vehicle, setVehicle] = useState([
     { label: 'Car', value: 'car' },
     { label: 'Bike', value: 'bike' },
@@ -56,6 +60,7 @@ const VehicleInfo = () => {
 
   function handleSubmit(params) {
     alert('Detail has been submited');
+    navigation.navigate('Home')
   }
 
   let optionArray = [

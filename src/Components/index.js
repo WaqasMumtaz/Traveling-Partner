@@ -22,6 +22,7 @@ import BottomTabs from "./BottomTabs";
 import DropDown from "./Dropdown";
 import MainComponent from "./MainComponent";
 import AlertModal from "./AlertModal";
+import VideoPlayerModal from "./VideoPlayer";
 
 export default {
     ScreensSwiper,
@@ -50,5 +51,6 @@ export default {
     DropDown,
     Heading2,
     MainComponent,
-    AlertModal
+    AlertModal,
+    VideoPlayerModal
 }

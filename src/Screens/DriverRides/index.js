@@ -112,7 +112,7 @@ const DriverRides = () => {
                 <View style={styles.btns}>
                     <Components.Gradient _style={styles.btn_container_style}>
                         <TouchableOpacity
-                            onPress={() => navigation.navigate('DriverRidesDetail')}
+                            onPress={() => navigation.navigate('DriverRidesDetal')}
                             style={{
                                 flex: 1,
                                 //  backgroundColor: 'red',

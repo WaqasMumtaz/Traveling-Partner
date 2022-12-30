@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View, SafeAreaView, Image, ScrollView, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, Image,StatusBar, ScrollView, TouchableOpacity } from 'react-native'
 import Components from '../../Components'
 import Global from '../../Global'
 import location from '../../Assets/Icons/location.png'
@@ -28,6 +28,8 @@ const TaxiStand = () => {
     }
 
     return (
+        <>
+        <StatusBar barStyle='dark-content' backgroundColor='#fff' />
         <SafeAreaView style={styles.container}>
             <Components.TopLogo />
             <View style={{ flex: 1, backgroundColor: Global.main_color }}>
@@ -64,7 +66,7 @@ const TaxiStand = () => {
                         <Components.MainButton
                             title={'Search Taxi'}
                             btn_container_style={styles.btn_container_style}
-                            handleNavigation={() => navigation.navigate('Rides')}
+                            handleNavigation={() => alert('Search Pending...')}
                         />
                         </View>
                         <View style={{ flex: 1, marginTop:10 }}>
@@ -82,6 +84,7 @@ const TaxiStand = () => {
             <Components.BottomTabs />
 
         </SafeAreaView>
+        </>
     )
 }
 

@@ -18,10 +18,14 @@ import ActionSheet from 'react-native-actionsheet';
 import ImagePicker from 'react-native-image-crop-picker';
 import ImageModal from 'react-native-image-modal';
 import rectangle from '../../Assets/rectangle.png';
+import { useNavigation } from '@react-navigation/native';
+
 
 
 const DriverLicenseInfo = () => {
     let actionSheet = useRef();
+  let navigation = useNavigation();
+
     const [gender, setGender] = useState([
         { label: 'Male', value: 'male' },
         { label: 'Female', value: 'female' },
@@ -72,6 +76,8 @@ const DriverLicenseInfo = () => {
         setErrorObj(errors);
         if (Object.keys(errors).length == 0) {
             alert('Detail has been submited');
+            navigation.navigate('VehicleInfo');
+
         }
     }
 

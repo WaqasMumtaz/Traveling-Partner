@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity, Image } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity, Image, StatusBar } from 'react-native'
 import Components from '../../Components'
 import user_1 from '../../Assets/user_1.png';
 import Global from '../../Global';
@@ -35,6 +35,8 @@ const RidesDetail = () => {
     });
 
     return (
+        <>
+        <StatusBar barStyle='dark-content' backgroundColor='#fff' />
         <Components.MainComponent>
             <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
                 <View style={{ flex: 1, marginHorizontal: 18 }}>
@@ -186,6 +188,7 @@ const RidesDetail = () => {
                 </View>
             </ScrollView>
         </Components.MainComponent>
+        </>
     )
 }
 

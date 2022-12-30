@@ -7,17 +7,19 @@ import Components from "../../Components";
 import { useNavigation } from "@react-navigation/native";
 
 function SignUp() {
-    const [screen, setScreen] = useState(0);
+    const [screen, setScreen] = useState(null);
     const navigation = useNavigation();
 
-    function handleNavigation(screen) {
-        if (screen == 0) {
-            setScreen(screen);
-            //navigation.navigate('Driver Info');
+    function handleNavigation(params) {
+        if (params == 0) {
+            setScreen(0);
+            //navigation.navigate('Mobile Phone')
+            navigation.navigate('Driver Info');
         }
-        else {
-            setScreen(screen);
-            //navigation.navigate('Partner Info');
+        else if(params == 1 ) {
+            setScreen(1);
+            //navigation.navigate('Mobile Phone')
+            navigation.navigate('Partner Info');
         }
     }
 
@@ -76,12 +78,12 @@ function SignUp() {
                             <Text style={styles.title}>Partner</Text>
                         </View>
                 </View>
-                <View style={{ flex: 0.3,justifyContent:'center', alignItems:"center"}}>
+                {/* <View style={{ flex: 0.3,justifyContent:'center', alignItems:"center"}}>
                     <Components.BackButton
                         title={'Sign up with phone number'}
                         handleNavigation={() => navigation.navigate('Mobile Phone')}
                     />
-                </View>
+                </View> */}
                 <View style={{ flex: 0.6}}>
                     <Components.AdBanner />
                 </View>

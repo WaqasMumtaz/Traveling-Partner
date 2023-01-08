@@ -31,6 +31,7 @@ import VehicleInfo from './src/Screens/VehicleInfo';
 import DriverTaxiStand from './src/Screens/DriverTaxiStand';
 import DriverRides from './src/Screens/DriverRides';
 import DriverRidesDetail from './src/Screens/DriverRidesDetails';
+import PoolRide from './src/Screens/PoolRide/Partner/PoolRide';
 
 const Section = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';

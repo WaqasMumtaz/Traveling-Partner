@@ -34,6 +34,8 @@ function MainNavigation() {
         <Stack.Screen name='DriverTaxiStand' component={Screens.DriverTaxiStand} />
         <Stack.Screen name='DriverRides' component={Screens.DriverRides}/>
         <Stack.Screen name='DriverRidesDetal' component={Screens.DriverRidesDetail} />
+        <Stack.Screen name='PoolRide' component={Screens.PoolRide} />
+        <Stack.Screen name='PoolRides' component={Screens.PoolRides} />
       </Stack.Navigator>
   );
 }

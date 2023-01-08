@@ -19,6 +19,8 @@ import VehicleInfo from "./VehicleInfo";
 import DriverTaxiStand from "./DriverTaxiStand";
 import DriverRides from "./DriverRides";
 import DriverRidesDetail from "./DriverRidesDetails";
+import PoolRide from "./PoolRide/Partner/poolRide";
+import PoolRides from "./PoolRide/Partner/poolRides";
 
 export default {
     AcceptRide,
@@ -41,5 +43,7 @@ export default {
     VehicleInfo,
     DriverTaxiStand,
     DriverRides,
-    DriverRidesDetail
+    DriverRidesDetail,
+    PoolRide,
+    PoolRides
 }

@@ -13,11 +13,15 @@ import rectangle from '../../Assets/rectangle.png'
 import { useNavigation } from "@react-navigation/native";
 import IonicIcon from 'react-native-vector-icons/Ionicons'
 import Swiper from "react-native-swiper";
+import { StackActions } from '@react-navigation/native';
 
 
 
-const Home = () => {
-    let navigation = useNavigation();
+const Home = ({navigation, route}) => {
+    const { routeName } = route?.params;
+    console.log('And Route Detail >>>>', routeName);
+   
+    let _navigation = useNavigation();
     let data = [
         {
             id: 1,
@@ -68,42 +72,57 @@ const Home = () => {
 
         // }
         let newArr = arr.map(item => (item.id == id ? { ...item, selected: true } : { ...item, selected: false }))
-        console.log('New Arr >>>', newArr);
+        // console.log('New Arr >>>', newArr);
         setTaxiData(newArr);
         if (name === 'Trip') {
-            navigation.navigate('RidesDetail');
+            _navigation.navigate('RidesDetail');
             // navigation.replace('TaxiStand');
         }
-        else if(name === 'Taxi Stands') navigation.navigate('DriverTaxiStand');
+        else if (name === 'Taxi Stands') _navigation.navigate('DriverTaxiStand');
+        else if(name === 'Pool Ride') {
+            if(routeName === 'Partner'){
+                _navigation.dispatch(
+                    StackActions.replace('PoolRide')
+                  );
+                // _navigation.navigate('PoolRide')
+                
+            } 
+        }
+
     }
 
 
     return (
         <>
             <StatusBar translucent backgroundColor='transparent' barStyle={'light-content'} />
-            <SafeAreaView style={styles.container}>
+            {/* <SafeAreaView style={styles.container}> */}
                 {/* <Text>Home</Text> */}
-                <View style={{ flex: 1.8 }}>
-                    <Swiper
-                        style={styles.wrapper}
-                        showsButtons={false}
-                        activeDotColor={Global.main_color}
-                    >
-                        <View style={styles.slide1}>
-                        <Image source={MaskGroup} style={{ height: '100%', width: '100%' }} resizeMode='cover' />
-                        </View>
-                        <View style={styles.slide2}>
-                        <Image source={MaskGroup} style={{ height: '100%', width: '100%' }} resizeMode='cover' />
-                        </View>
-                        <View style={styles.slide3}>
-                        <Image source={MaskGroup} style={{ height: '100%', width: '100%' }} resizeMode='cover' />
-                        </View>
-                    </Swiper>
-                    {/* <Image source={MaskGroup} style={{ height: '100%', width: '100%' }} resizeMode='cover' /> */}
-                </View>
-                <View style={{ flex: 2.8, backgroundColor: Global.main_color, marginTop:15 }}>
-                    <ScrollView style={{ flex: 2, backgroundColor: Global.white, borderBottomLeftRadius: 25, borderBottomRightRadius: 25 }}>
-                        <View style={{ flex: 3, marginHorizontal: 10 }}>
+                <View style={{ flex: 1, backgroundColor: Global.main_color }}>
+                <ScrollView 
+                  contentContainerStyle={{ flexGrow: 1 }}
+                  style={{flex:1,backgroundColor: Global.white, borderBottomLeftRadius: 25, borderBottomRightRadius: 25 }}
+                > 
+                    <View style={{ height:'33%' }}>
+                        <Swiper
+                             height={'33%'}
+                            style={styles.wrapper}
+                            showsButtons={false}
+                            activeDotColor={Global.main_color}
+                            
+                        >
+                            <View style={styles.slide1}>
+                                <Image source={MaskGroup} style={{ height: '100%', width: '100%' }} resizeMode='cover' />
+                            </View>
+                            <View style={styles.slide2}>
+                                <Image source={MaskGroup} style={{ height: '100%', width: '100%' }} resizeMode='cover' />
+                            </View>
+                            <View style={styles.slide3}>
+                                <Image source={MaskGroup} style={{ height: '100%', width: '100%' }} resizeMode='cover' />
+                            </View>
+                        </Swiper>
+                        {/* <Image source={MaskGroup} style={{ height: '100%', width: '100%' }} resizeMode='cover' /> */}
+                    </View>
+                        <View style={{ flex: 1, marginHorizontal: 10 , marginTop:15}}>
                             <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
                                 {taxiData.map((item, indx) => {
                                     return (
@@ -157,13 +176,10 @@ const Home = () => {
                         <View style={{ flex: 1, margin: 15 }}>
                             <Components.AdBanner />
                         </View>
-                    </ScrollView>
-                </View>
-                <Components.BottomTabs />
-                {/* <Components.Gradient _style={{ flex: 0.32}}>
-                    <Text>Bottom Tab</Text>
-                </Components.Gradient> */}
-            </SafeAreaView>
+                </ScrollView>
+                    </View>
+                    <Components.BottomTabs />
+            {/* </SafeAreaView> */}
         </>
     )
 }
@@ -190,7 +206,9 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: 'center'
     },
-    wrapper: {},
+    wrapper: {
+       // height:'50%'
+    },
     slide1: {
         flex: 1,
         justifyContent: 'center',

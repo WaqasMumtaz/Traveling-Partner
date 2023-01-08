@@ -66,7 +66,7 @@ const PartnerBasicInfo = () => {
 
   function handleSubmit(params) {
     alert('Detail has been submited');
-    navigation.navigate('Home');
+    navigation.navigate('Home', {routeName:'Partner'});
   }
 
   let optionArray = [

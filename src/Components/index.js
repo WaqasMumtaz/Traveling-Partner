@@ -23,6 +23,7 @@ import DropDown from "./Dropdown";
 import MainComponent from "./MainComponent";
 import AlertModal from "./AlertModal";
 import VideoPlayerModal from "./VideoPlayer";
+import MapLogo from "./Map";
 
 export default {
     ScreensSwiper,
@@ -52,5 +53,6 @@ export default {
     Heading2,
     MainComponent,
     AlertModal,
-    VideoPlayerModal
+    VideoPlayerModal,
+    MapLogo
 }

@@ -18,5 +18,6 @@ export default {
     light_green:"#D7EEF6",
     brown_clr:"#F1D4B6",
     light_red:'#EB1933',
-    video_url:"https://vjs.zencdn.net/v/oceans.mp4"
+    video_url:"https://vjs.zencdn.net/v/oceans.mp4",
+    green:"#33CE5D"
 }

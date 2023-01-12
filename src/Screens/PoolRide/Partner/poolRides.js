@@ -115,7 +115,7 @@ const PoolRides = () => {
                 <View style={styles.btns}>
                     <Components.Gradient _style={styles.btn_container_style}>
                         <TouchableOpacity
-                            // onPress={() => navigation.navigate('DriverRidesDetal')}
+                             onPress={() => navigation.navigate('PoolRidesDetail')}
                             style={{
                                 flex: 1,
                                 //  backgroundColor: 'red',

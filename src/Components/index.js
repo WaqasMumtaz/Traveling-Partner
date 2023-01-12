@@ -24,6 +24,9 @@ import MainComponent from "./MainComponent";
 import AlertModal from "./AlertModal";
 import VideoPlayerModal from "./VideoPlayer";
 import MapLogo from "./Map";
+import Toggle from "./Toggle";
+import InputButton from "./InputButton";
+import NoRecord from "./NoRecord";
 
 export default {
     ScreensSwiper,
@@ -54,5 +57,8 @@ export default {
     MainComponent,
     AlertModal,
     VideoPlayerModal,
-    MapLogo
+    MapLogo,
+    Toggle,
+    InputButton,
+    NoRecord
 }

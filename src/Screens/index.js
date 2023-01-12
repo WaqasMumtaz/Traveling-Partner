@@ -21,6 +21,11 @@ import DriverRides from "./DriverRides";
 import DriverRidesDetail from "./DriverRidesDetails";
 import PoolRide from "./PoolRide/Partner/poolRide";
 import PoolRides from "./PoolRide/Partner/poolRides";
+import PoolRidesDetail from "./PoolRide/Partner/poolRidesDetail";
+import PoolPartner from "./PoolRide/Partner/PoolPartner";
+import PartnerDetail from "./PoolRide/Partner/PartnerDetail";
+import PartnerPickLocation from "./PoolRide/Partner/PickLocation";
+import FoundRide from "./PoolRide/Partner/FoundRide";
 
 export default {
     AcceptRide,
@@ -45,5 +50,10 @@ export default {
     DriverRides,
     DriverRidesDetail,
     PoolRide,
-    PoolRides
+    PoolRides,
+    PoolRidesDetail,
+    PoolPartner,
+    PartnerDetail,
+    PartnerPickLocation,
+    FoundRide
 }

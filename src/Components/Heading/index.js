@@ -40,6 +40,11 @@ const styles = StyleSheet.create({
         fontSize:12,
         color: '#000'
       },
+    heading2:{
+      fontSize:14,
+      color: '#000',
+      fontWeight:'500'
+    }
 
 })
 

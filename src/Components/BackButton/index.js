@@ -8,7 +8,7 @@ export default function BackButton({ title , handleNavigation}) {
   const navigation = useNavigation();
 
     return (
-        <View style={{flexDirection:'row', marginHorizontal:8}}>
+        <View style={{flex:1, flexDirection:'row', marginHorizontal:8, alignItems:"center", justifyContent:'center'}}>
             <TouchableOpacity
                 style={styles.btn_style}
                 onPress={()=>{handleNavigation ? handleNavigation() : navigation.goBack()}}
@@ -21,8 +21,9 @@ export default function BackButton({ title , handleNavigation}) {
 
 const styles = StyleSheet.create({
     btn_style: {
-        flex:1,
+        // flex:1,
         alignItems:'center',
+        justifyContent:'center'
     },
     title: {
         //textTransform: 'uppercase',

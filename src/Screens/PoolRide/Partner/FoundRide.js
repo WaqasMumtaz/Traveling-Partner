@@ -76,7 +76,10 @@ const FoundRide = () => {
                                 </TouchableOpacity>
                             </Components.Gradient>
 
-                            <TouchableOpacity style={[styles.btn, {width:160, backgroundColor:Global.inputs_clr, borderRadius: 100,height:45}]}>
+                            <TouchableOpacity 
+                             onPress={()=> navigation.navigate('PartnerDeliveryPool')}
+                             style={[styles.btn, {width:160, backgroundColor:Global.inputs_clr, borderRadius: 100,height:45}]}
+                            >
                                 <Text style={{fontSize: 14}}>Delivery</Text>
                             </TouchableOpacity>
 

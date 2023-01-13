@@ -3,6 +3,7 @@ import * as React from 'react';
 import { View, Text } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ScreensSwiper from '../Components/Swiper';
+import PartnerDeliveryPool from './DeliveryStack';
 
 import Screens from '../Screens';
 
@@ -41,6 +42,7 @@ function MainNavigation() {
         <Stack.Screen name='PartnerDetail' component={Screens.PartnerDetail} />
         <Stack.Screen name='PartnerPickLocation' component={Screens.PartnerPickLocation}/>
         <Stack.Screen name='FoundRide' component={Screens.FoundRide} />
+        <Stack.Screen name='PartnerDeliveryPool' component={PartnerDeliveryPool} />
       </Stack.Navigator>
   );
 }

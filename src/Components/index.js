@@ -27,6 +27,7 @@ import MapLogo from "./Map";
 import Toggle from "./Toggle";
 import InputButton from "./InputButton";
 import NoRecord from "./NoRecord";
+import LocationDetail from "./LocationDetail";
 
 export default {
     ScreensSwiper,
@@ -60,5 +61,6 @@ export default {
     MapLogo,
     Toggle,
     InputButton,
-    NoRecord
+    NoRecord,
+    LocationDetail
 }

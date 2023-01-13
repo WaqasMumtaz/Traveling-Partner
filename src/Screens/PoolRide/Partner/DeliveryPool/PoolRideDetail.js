@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity, Image } from 'react-native'
-import Components from '../../../Components';
-import user_1 from '../../../Assets/pool_user.png';
-import Global from '../../../Global';
+import Components from '../../../../Components';
+import user_1 from '../../../../Assets/pool_user.png';
+import Global from '../../../../Global';
 import IonicIcon from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 // import map_img from '../../Assets/map.png';
 
 
-const PoolRidesDetail = () => {
+const PoolRideDetail = () => {
     let navigation = useNavigation();
     const [modalVisible, setModalVisible] = useState(false);
     const [ride, setRide] = useState({
@@ -207,7 +207,7 @@ const PoolRidesDetail = () => {
     )
 }
 
-export default PoolRidesDetail
+export default PoolRideDetail
 
 const styles = StyleSheet.create({
     riderContainer: {

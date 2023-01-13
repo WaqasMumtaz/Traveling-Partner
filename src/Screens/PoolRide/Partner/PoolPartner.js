@@ -158,8 +158,8 @@ const RiderCard = ({ item }) => {
                     </View>
                 </View>
             </View>
-            <View style={styles.details}>
-                {/* <Text>jdlakjfdlkal</Text> */}
+            <Components.LocationDetail/>
+            {/* <View style={styles.details}>
                 <View style={{ alignItems: 'center', width: 30 }}>
                     <View style={[styles.dot, { backgroundColor: Global.green_clr }]} />
                     <View style={[styles.line]} />
@@ -173,7 +173,7 @@ const RiderCard = ({ item }) => {
                         <Text numberOfLines={1} ellipsizeMode='tail'>13 Sept, 2022 at 06:31 PM , Gulstan-e-Johar , Karachi University road</Text>
                     </View>
                 </View>
-            </View>
+            </View> */}
             <View style={styles.btns}>
                 <Components.Gradient _style={styles.btn_container_style}>
                     <TouchableOpacity

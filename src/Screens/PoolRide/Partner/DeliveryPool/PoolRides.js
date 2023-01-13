@@ -1,23 +1,23 @@
 import React from 'react'
-import { StyleSheet, Text, View, SafeAreaView, FlatList, Image, TouchableOpacity } from 'react-native'
-import Components from '../../Components'
-import Global from '../../Global'
-import user_1 from '../../Assets/user_1.png';
-import user_2 from '../../Assets/user_2.png';
+import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity } from 'react-native'
+import Global from '../../../../Global'
+import Components from '../../../../Components'
+import user_1 from '../../../../Assets/user_1.png';
+import user_2 from '../../../../Assets/pool_user.png';
 import IonicIcon from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 
-const DriverRides = () => {
+const PoolRides = () => {
     let navigation = useNavigation();
-
     let DATA = [
         {
             id: 1,
             user: {
-                name: 'Shahid Zaman',
+                name: 'Sohail Anwar',
                 photo: user_2,
                 age: 24,
-                stars: 4
+                stars: 4,
+                status: 'Partner Plan'
             },
             vehicle: {
                 name: 'Toyota Corrola',
@@ -30,10 +30,12 @@ const DriverRides = () => {
         {
             id: 2,
             user: {
-                name: 'Nadeem Zaman',
+                name: 'Mehmood',
                 photo: user_1,
                 age: 24,
-                stars: 5
+                stars: 5,
+                status: 'Driver Plan'
+
             },
             vehicle: {
                 name: 'Toyota Aqua',
@@ -51,13 +53,13 @@ const DriverRides = () => {
             <View style={styles.cardContainer}>
                 <View style={styles.profile}>
                     <View style={styles.logoStyle}>
-                        <Image source={item.user.photo} resizeMode='contain' style={{ height: '100%', width: '100%' }} />
+                        <Image source={item.user.photo} resizeMode='contain' style={{ height: '100%', width: '100%', borderRadius: 100 }} />
                     </View>
                     <View style={{ flex: 1, marginLeft: 15 }}>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1 }}>
-                                <Text>{item.user.name}</Text>
-                                <IonicIcon name='checkmark-circle' size={15} color='green' />
+                                <Text style={{fontWeight:'700'}}>{item.user.name}</Text>
+                                <IonicIcon name='checkmark-circle' size={18} color={Global.green} style={{ marginLeft: 10 }} />
                             </View>
                             {item.user.stars == 5 ?
                                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -89,8 +91,9 @@ const DriverRides = () => {
                                             <IonicIcon name='star' size={15} color={Global.main_color} />
                             }
                         </View>
-                        {/* <Text>{item.vehicle.name}</Text>
-                        <Text>{`${item.vehicle.number} | ${item.vehicle.model} | ${item.vehicle.color} | ${item.vehicle.conditioner}`}</Text> */}
+                        <View style={styles.status}>
+                            <Text style={{color:Global.white,fontWeight:'500'}}>{item.user.status}</Text>
+                        </View>
                     </View>
                 </View>
                 <Components.LocationDetail/>
@@ -107,12 +110,12 @@ const DriverRides = () => {
                         <View>
                             <Text numberOfLines={1} ellipsizeMode='tail'>13 Sept, 2022 at 06:31 PM , Gulstan-e-Johar , Karachi University road</Text>
                         </View>
-                    </View> 
+                    </View>
                 </View> */}
                 <View style={styles.btns}>
                     <Components.Gradient _style={styles.btn_container_style}>
                         <TouchableOpacity
-                            onPress={() => navigation.navigate('DriverRidesDetal')}
+                             onPress={() => navigation.navigate('Delivery PoolRides Detail')}
                             style={{
                                 flex: 1,
                                 //  backgroundColor: 'red',
@@ -138,45 +141,26 @@ const DriverRides = () => {
     }
 
     return (
-        <SafeAreaView style={styles.container}>
-            <Components.TopLogo />
-            <View style={styles.body}>
-                <View style={styles.body_child}>
-                    <View style={{ alignItems: 'center' }}>
-                        <Components.Heading3 title={'Rides'} />
-                    </View>
-                    <View style={{ flex: 1, marginHorizontal: 12, marginBottom: 13 }}>
-                        <FlatList
-                            data={DATA}
-                            renderItem={renderItem}
-                            keyExtractor={item => item.id}
-                            ItemSeparatorComponent={() => <View style={{ margin: 8 }} />}
-                            ListFooterComponent={() => <View style={{ marginTop: 12 }}><Components.AdBanner /></View>}
-                        />
-                    </View>
-                </View>
+        <Components.MainComponent>
+            <View style={{ alignItems: 'center' }}>
+                <Components.Heading3 title={'Pool Rides'} />
             </View>
-            <Components.BottomTabs />
-        </SafeAreaView>
+            <View style={{ flex: 1, marginHorizontal: 12, marginBottom: 13 }}>
+                <FlatList
+                    data={DATA}
+                    renderItem={renderItem}
+                    keyExtractor={item => item.id}
+                    ItemSeparatorComponent={() => <View style={{ margin: 14 }} />}
+                    ListFooterComponent={() => <View style={{ marginTop: 20 }}><Components.AdBanner /></View>}
+                />
+            </View>
+        </Components.MainComponent>
     )
 }
 
-export default DriverRides
+export default PoolRides
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1
-    },
-    body_child: {
-        flex: 1,
-        backgroundColor: Global.white,
-        borderBottomEndRadius: 25,
-        borderBottomStartRadius: 25
-    },
-    body: {
-        flex: 1,
-        backgroundColor: Global.main_color,
-    },
     cardContainer: {
         flex: 1,
         //height: 160,
@@ -184,7 +168,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         padding: 10,
         borderColor: Global.gray_color,
-        borderWidth: 1,
+        borderWidth: 0.3,
         backgroundColor: Global.white,
         shadowColor: "#000",
         shadowOffset: {
@@ -193,7 +177,7 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.27,
         shadowRadius: 4.65,
-        elevation: 6
+        elevation: 3
     },
     logoStyle: {
         height: 70,
@@ -210,7 +194,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-evenly',
         // backgroundColor: 'red',
-        marginTop: 10
+        marginTop: 5
     },
     msgsBtn: {
         height: 45,
@@ -241,5 +225,14 @@ const styles = StyleSheet.create({
         width: 1,
         backgroundColor: Global.black_clr
         // borderColor:Global.gray_color
+    },
+    status:{
+        marginTop:7,
+        width:120,
+        padding:3, 
+        paddingHorizontal:10, 
+        backgroundColor:Global.green,
+         borderRadius:10, 
+         alignItems:'center'
     }
 })

@@ -40,7 +40,7 @@ const PoolRideDetail = () => {
         setModalVisible(true);
         //alert(params)
         if (params === 'confirm') {
-            navigation.navigate('PoolPartner')
+            navigation.navigate('DeliveryPoolPartner')
             setRide({
                 confirm: true,
                 reject: false

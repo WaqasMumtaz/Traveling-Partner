@@ -1,5 +1,6 @@
-import VideoPlayer from "./VideoPlayer";
 
-export { 
-    VideoPlayer
+import Checkbox from "./Checkbox";
+
+export default { 
+    Checkbox
 }

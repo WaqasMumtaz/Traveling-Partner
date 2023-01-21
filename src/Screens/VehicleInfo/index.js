@@ -60,7 +60,7 @@ const VehicleInfo = () => {
 
   function handleSubmit(params) {
     alert('Detail has been submited');
-    navigation.navigate('Home')
+    navigation.navigate('Home', {routeName:'Driver'})
   }
 
   let optionArray = [

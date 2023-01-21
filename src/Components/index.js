@@ -28,6 +28,8 @@ import Toggle from "./Toggle";
 import InputButton from "./InputButton";
 import NoRecord from "./NoRecord";
 import LocationDetail from "./LocationDetail";
+import DataInfo from "./OfflineOnline";
+import VechileMeterInfo from "./VechileMeterInfo";
 
 export default {
     ScreensSwiper,
@@ -62,5 +64,7 @@ export default {
     Toggle,
     InputButton,
     NoRecord,
-    LocationDetail
+    LocationDetail,
+    DataInfo,
+    VechileMeterInfo
 }

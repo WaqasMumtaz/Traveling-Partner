@@ -87,6 +87,12 @@ const Home = ({navigation, route}) => {
                 // _navigation.navigate('PoolRide')
                 
             } 
+            else if(routeName === 'Driver'){
+                // alert('<< Driver PoolRide >>')
+                _navigation.dispatch(
+                    StackActions.replace('DriverPoolRide')
+                  );
+            }
         }
 
     }

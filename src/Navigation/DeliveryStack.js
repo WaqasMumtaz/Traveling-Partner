@@ -30,16 +30,5 @@ const PartnerDeliveryPool = () => {
   )
 }
 
-const DriverDeliveryPool = () => {
-    return (
-      <Stack.Navigator
-      screenOptions={{
-        headerShown: false
-      }}
-      >
-      {/* <Stack.Screen name='PoolRide' component={PoolRide}/> */}
-      </Stack.Navigator>
-    )
-  }
 
 export default PartnerDeliveryPool;

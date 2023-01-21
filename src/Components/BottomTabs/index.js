@@ -22,9 +22,9 @@ const BottomTabs = ({ handleNavigation }) => {
 
     function navigateHome() {
         console.log('Navigation Detail >>>', navigation);
-        // navigation.dispatch(
-        //     StackActions.replace('Home')
-        // );
+        navigation.dispatch(
+            StackActions.replace('Home', {routeName:null})
+        );
     }
 
     return (

@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, Switch, View, SafeAreaView, Image, ScrollView, TouchableOpacity } from 'react-native'
-import Components from '../../Components'
-import Global from '../../Global'
-import location from '../../Assets/Icons/location.png'
-import driver from '../../Assets/Icons/man.png';
-import map_img from '../../Assets/map.png';
+import Components from '../../../../Components'
+import Global from '../../../../Global'
+// import location from '../../Assets/Icons/location.png'
+// import driver from '../../Assets/Icons/man.png';
+import map_img from '../../../../Assets/map.png';
 import { useNavigation } from "@react-navigation/native";
 import IonicIcon from 'react-native-vector-icons/Ionicons';
 
 
-const DriverTaxiStand = () => {
+const PoolRide = () => {
     let navigation = useNavigation();
     const [isEnabled, setIsEnabled] = useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
@@ -22,26 +22,29 @@ const DriverTaxiStand = () => {
     }
 
     function handleRides() {
-        navigation.navigate('DriverRides');
+        navigation.navigate('DeliveryPoolRides');
     }
 
     return (
         <Components.MainComponent>
             <ScrollView contentContainerStyle={{ flexGrow: 1 }} >
                 <View style={{ alignItems: 'center' }}>
-                    <Components.Heading3 title={'Taxi Stands'} />
+                    <Components.Heading3 title={'Pool Ride'} />
                 </View>
                 <View style={{ flex: 1 }}>
                     <Components.DataInfo
                         isEnabled={isEnabled}
                         toggleSwitch={toggleSwitch}
                     />
-                    <View style={{ alignItems: 'center', marginTop: 20 }}>
+                    <View style={{ alignItems: 'center',justifyContent:'center', flexDirection:'row', marginTop: 20 }}>
                         <Components.MainButton
                             title={'Comming Rides'}
                             handleNavigation={handleRides}
                             btn_container_style={{ borderRadius: 100, height: 50,width:160 }}
                         />
+                        <TouchableOpacity style={{marginLeft:10}}>
+                            <Text style={{textDecorationLine:"underline", fontSize:16}}>Make Ride Plan</Text>
+                        </TouchableOpacity>
                     </View>
                     <View style={{ flex: 1, marginTop: 10 }}>
                         <Image
@@ -63,7 +66,7 @@ const DriverTaxiStand = () => {
     )
 }
 
-export default DriverTaxiStand
+export default PoolRide
 
 const styles = StyleSheet.create({
     container: {

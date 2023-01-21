@@ -11,7 +11,7 @@ export default function MainButton({ title , handleNavigation , btn_container_st
         //  <View style={{flexDirection:'row',backgroundColor:'red',flex:1}}>
         <Gradient _style={{...styles.btn_style, ...btn_container_style}}>
             <TouchableOpacity
-                 style={{flex:1,alignItems:'center'}}
+                 style={{flex:1,alignItems:'center', justifyContent:'center'}}
                 onPress={()=> { handleNavigation ? handleNavigation() : console.log('Clicked Button') } }
             >
                 <Text style={{...styles.title, ...title_style}} >{title}</Text>
@@ -24,7 +24,7 @@ export default function MainButton({ title , handleNavigation , btn_container_st
 
 const styles = StyleSheet.create({
     btn_style: {
-      //  flex:1,
+        //flex:1,
        // backgroundColor:'red',
         flexDirection:'row',
         // backgroundColor: Global.btn_background,

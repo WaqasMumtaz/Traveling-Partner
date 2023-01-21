@@ -5,6 +5,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ScreensSwiper from '../Components/Swiper';
 import PartnerDeliveryPool from './DeliveryStack';
 
+import DriverPoolRide from './DriverPoolRide';
+
 import Screens from '../Screens';
 
 const Stack = createNativeStackNavigator();
@@ -43,6 +45,8 @@ function MainNavigation() {
         <Stack.Screen name='PartnerPickLocation' component={Screens.PartnerPickLocation}/>
         <Stack.Screen name='FoundRide' component={Screens.FoundRide} />
         <Stack.Screen name='PartnerDeliveryPool' component={PartnerDeliveryPool} />
+        <Stack.Screen name='DriverPoolRide' component={DriverPoolRide} />
+
       </Stack.Navigator>
   );
 }

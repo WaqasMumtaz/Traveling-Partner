@@ -40,6 +40,10 @@ const PartnerDetail = () => {
         })
     }
 
+    function handleFunction(params) {
+        console.log('Selected item >>>', params);
+    }
+
     return (
         <>
             <Components.TopLogo />
@@ -61,7 +65,10 @@ const PartnerDetail = () => {
 
                         {selectedValue === 'In-City' && (
                             <>
-                                <Components.InputButton title={'Date'} />
+                                <Components.InputButton
+                                    title={'Date'}
+                                    onPress={handleFunction}
+                                />
                                 <Components.InputButton title={'Time'} />
                                 <View style={{ margin: 10 }} />
                                 <Components.InputText
@@ -124,7 +131,7 @@ const PartnerDetail = () => {
 
                     {selectedValue === 'Out-City' && (
                         <>
-                            <View style={{ margin: 5 , marginHorizontal:20}}>
+                            <View style={{ margin: 5, marginHorizontal: 20 }}>
                                 <View style={styles.details}>
                                     {/* <Text>jdlakjfdlkal</Text> */}
                                     <View style={{ alignItems: 'center', width: 30, justifyContent: 'center' }}>

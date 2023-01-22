@@ -53,6 +53,10 @@ const DeliveryPoolPartner = () => {
         })
     }
 
+    function handleFunction(params) {
+        console.log('Selected item >>>', params);
+    }
+
     return (
         <>
             <Components.TopLogo />
@@ -83,7 +87,10 @@ const DeliveryPoolPartner = () => {
                         ) : (
                             null
                         )}
-                        <Components.InputButton title={'Select Date'} />
+                        <Components.InputButton 
+                        title={'Select Date'}
+                        onPress={handleFunction} 
+                        />
                         <Components.InputButton title={'Select Time'} />
                         <Components.InputButton title={'Female Only'} />
                     </View>

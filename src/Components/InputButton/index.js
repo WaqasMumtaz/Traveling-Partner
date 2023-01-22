@@ -3,9 +3,11 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import Global from '../../Global'
 
 
-const InputButton = ({ title }) => {
+const InputButton = ({ title , onPress}) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity 
+    style={styles.container} 
+    onPress={()=> onPress ? onPress(title) : console.log('clicked button')}>
       <Text>{title}</Text>
     </TouchableOpacity>
   )

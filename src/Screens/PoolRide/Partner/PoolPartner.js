@@ -5,11 +5,16 @@ import Global from '../../../Global'
 import user_2 from '../../../Assets/pool_user.png';
 import IonicIcon from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
+import TemplateComponents from '../../../Components/TemplateComponents';
 
 const PoolPartner = () => {
     const [selectedValue, setSelectedValue] = useState('In-City');
     const navigation = useNavigation();
-    
+    const [options, setOptions] = useState({
+        calendar: false,
+        time: false
+    })
+
     const [riderData, setRiderData] = useState({
         id: 1,
         user: {
@@ -53,6 +58,35 @@ const PoolPartner = () => {
         })
     }
 
+    function handleFunction(params) {
+        console.log('Selected item >>>', params);
+        if (params === 'Select Date') {
+            setOptions({
+                calendar: true,
+                time: false
+            })
+        }
+        else if (params === 'Select Time') {
+            setOptions({
+                calendar: false,
+                time: true
+            })
+        }
+    }
+
+    function handleConfirm(time) {
+        console.log('Picked Time >>>>', time);
+        closeModal();
+    }
+
+    function closeModal() {
+        setOptions({
+            calendar: false,
+            time: false
+        })
+    }
+
+
     return (
         <>
             <Components.TopLogo />
@@ -83,8 +117,13 @@ const PoolPartner = () => {
                         ) : (
                             null
                         )}
-                        <Components.InputButton title={'Select Date'} />
-                        <Components.InputButton title={'Select Time'} />
+                        <Components.InputButton
+                            title={'Select Date'}
+                            onPress={handleFunction}
+                        />
+                        <Components.InputButton title={'Select Time'}
+                            onPress={handleFunction}
+                        />
                         <Components.InputButton title={'Female Only'} />
                     </View>
                     <View style={{ flex: 1, marginTop: 15 }}>
@@ -98,14 +137,32 @@ const PoolPartner = () => {
                         <View style={{ margin: 5 }} />
                         <RiderCard item={riderData} />
                         <View style={{ margin: 15 }} />
-                        <Components.MainButton 
-                          title={'Next'} 
-                          handleNavigation={()=> navigation.navigate('PartnerDetail')}
+                        <Components.MainButton
+                            title={'Next'}
+                            handleNavigation={() => navigation.navigate('PartnerDetail')}
                         />
                         <View style={{ margin: 15 }} />
                         <Components.AdBanner />
                     </View>
                 </ScrollView>
+                <Components.AlertModal
+                    modalVisible={options.calendar || options.time}
+                    closeModal={closeModal}
+                >
+                    <View style={{ margin: 10 }}>
+                        {options.calendar && (
+                            <TemplateComponents.Calendar />
+                        )}
+                        {options.time && (
+                            <TemplateComponents.DateTime
+                                mode={'time'}
+                                isVisible={options.time}
+                                handleConfirm={handleConfirm}
+                                hideDatePicker={closeModal}
+                            />
+                        )}
+                    </View>
+                </Components.AlertModal>
             </SafeAreaView>
         </>
     )
@@ -158,7 +215,7 @@ const RiderCard = ({ item }) => {
                     </View>
                 </View>
             </View>
-            <Components.LocationDetail/>
+            <Components.LocationDetail />
             {/* <View style={styles.details}>
                 <View style={{ alignItems: 'center', width: 30 }}>
                     <View style={[styles.dot, { backgroundColor: Global.green_clr }]} />
@@ -190,7 +247,7 @@ const RiderCard = ({ item }) => {
                     </TouchableOpacity>
                 </Components.Gradient>
                 <TouchableOpacity style={{}}>
-                    <Text style={{ textDecorationLine: 'underline', fontWeight:'600'}}>View Detail</Text>
+                    <Text style={{ textDecorationLine: 'underline', fontWeight: '600' }}>View Detail</Text>
                 </TouchableOpacity>
             </View>
         </View >

@@ -9,7 +9,11 @@ import { useNavigation } from '@react-navigation/native';
 const Driver = () => {
     const [selectedValue, setSelectedValue] = useState('In-City');
     const navigation = useNavigation();
-    
+    const [options, setOptions] = useState({
+        calendar: false,
+        time: false
+    })
+
     const [riderData, setRiderData] = useState({
         id: 1,
         user: {
@@ -53,6 +57,34 @@ const Driver = () => {
         })
     }
 
+    function handleFunction(params) {
+        console.log('Selected item >>>', params);
+        if (params === 'Select Date') {
+            setOptions({
+                calendar: true,
+                time: false
+            })
+        }
+        else if (params === 'Select Time') {
+            setOptions({
+                calendar: false,
+                time: true
+            })
+        }
+    }
+
+    function handleConfirm(time) {
+        console.log('Picked Time >>>>', time);
+        closeModal();
+    }
+
+    function closeModal() {
+        setOptions({
+            calendar: false,
+            time: false
+        })
+    }
+
     return (
         <>
             <Components.TopLogo />
@@ -83,8 +115,8 @@ const Driver = () => {
                         ) : (
                             null
                         )}
-                        <Components.InputButton title={'Select Date'} />
-                        <Components.InputButton title={'Select Time'} />
+                        <Components.InputButton title={'Select Date'} onPress={handleFunction} />
+                        <Components.InputButton title={'Select Time'} onPress={handleFunction} />
                         <Components.InputButton title={'Female Only'} />
                     </View>
                     <View style={{ flex: 1, marginTop: 15 }}>
@@ -98,14 +130,32 @@ const Driver = () => {
                         <View style={{ margin: 5 }} />
                         <RiderCard item={riderData} />
                         <View style={{ margin: 15 }} />
-                        <Components.MainButton 
-                          title={'Next'} 
-                          handleNavigation={()=> navigation.navigate('Driver AddPoolRide')}
+                        <Components.MainButton
+                            title={'Next'}
+                            handleNavigation={() => navigation.navigate('Driver AddPoolRide')}
                         />
                         <View style={{ margin: 15 }} />
                         <Components.AdBanner />
                     </View>
                 </ScrollView>
+                <Components.AlertModal
+                    modalVisible={options.calendar}
+                    closeModal={closeModal}
+                >
+                    <View style={{ margin: 10 }}>
+                        {options.calendar && (
+                            <TemplateComponents.Calendar />
+                        )}
+                    </View>
+                </Components.AlertModal>
+                {options.time && (
+                    <TemplateComponents.DateTime
+                        mode={'time'}
+                        isVisible={options.time}
+                        handleConfirm={handleConfirm}
+                        hideDatePicker={closeModal}
+                    />
+                )}
             </SafeAreaView>
         </>
     )
@@ -158,7 +208,7 @@ const RiderCard = ({ item }) => {
                     </View>
                 </View>
             </View>
-            <Components.LocationDetail/>
+            <Components.LocationDetail />
             {/* <View style={styles.details}>
                 <View style={{ alignItems: 'center', width: 30 }}>
                     <View style={[styles.dot, { backgroundColor: Global.green_clr }]} />
@@ -190,7 +240,7 @@ const RiderCard = ({ item }) => {
                     </TouchableOpacity>
                 </Components.Gradient>
                 <TouchableOpacity style={{}}>
-                    <Text style={{ textDecorationLine: 'underline', fontWeight:'600'}}>View Detail</Text>
+                    <Text style={{ textDecorationLine: 'underline', fontWeight: '600' }}>View Detail</Text>
                 </TouchableOpacity>
             </View>
         </View >

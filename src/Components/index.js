@@ -30,6 +30,7 @@ import NoRecord from "./NoRecord";
 import LocationDetail from "./LocationDetail";
 import DataInfo from "./OfflineOnline";
 import VechileMeterInfo from "./VechileMeterInfo";
+import Icon from "./Icon";
 
 export default {
     ScreensSwiper,
@@ -66,5 +67,6 @@ export default {
     NoRecord,
     LocationDetail,
     DataInfo,
-    VechileMeterInfo
+    VechileMeterInfo,
+    Icon
 }

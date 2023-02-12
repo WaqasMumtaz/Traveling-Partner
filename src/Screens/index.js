@@ -26,6 +26,7 @@ import PoolPartner from "./PoolRide/Partner/PoolPartner";
 import PartnerDetail from "./PoolRide/Partner/PartnerDetail";
 import PartnerPickLocation from "./PoolRide/Partner/PickLocation";
 import FoundRide from "./PoolRide/Partner/FoundRide";
+import ActiveRide from "./ActiveRide";
 
 export default {
     AcceptRide,
@@ -55,5 +56,6 @@ export default {
     PoolPartner,
     PartnerDetail,
     PartnerPickLocation,
-    FoundRide
+    FoundRide,
+    ActiveRide
 }

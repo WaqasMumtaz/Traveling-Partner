@@ -24,13 +24,6 @@ import Screens from './src/Screens';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import Global from './src/Global';
 import MainNavigation from './src/Navigation';
-import PartnerBasicInfo from './src/Screens/PartnerBasicInfo';
-import DriverBasicInfo from './src/Screens/DriverBasicInfo';
-import DriverLicenseInfo from './src/Screens/DriverLicenseInfo';
-import VehicleInfo from './src/Screens/VehicleInfo';
-import DriverTaxiStand from './src/Screens/DriverTaxiStand';
-import DriverRides from './src/Screens/DriverRides';
-import DriverRidesDetail from './src/Screens/DriverRidesDetails';
 
 const Section = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -76,7 +69,6 @@ const App = () => {
     <>
       <StatusBar barStyle='dark-content' backgroundColor='#fff' />
       <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
-        {/* <Components.TopLogo/> */}
         <NavigationContainer theme={MyTheme}>
           <MainNavigation />
           {/* <PartnerBasicInfo/> */}

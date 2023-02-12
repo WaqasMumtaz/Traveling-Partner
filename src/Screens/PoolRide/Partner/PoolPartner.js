@@ -146,23 +146,24 @@ const PoolPartner = () => {
                     </View>
                 </ScrollView>
                 <Components.AlertModal
-                    modalVisible={options.calendar || options.time}
+                    modalVisible={options.calendar}
                     closeModal={closeModal}
                 >
                     <View style={{ margin: 10 }}>
                         {options.calendar && (
                             <TemplateComponents.Calendar />
                         )}
-                        {options.time && (
-                            <TemplateComponents.DateTime
-                                mode={'time'}
-                                isVisible={options.time}
-                                handleConfirm={handleConfirm}
-                                hideDatePicker={closeModal}
-                            />
-                        )}
+
                     </View>
                 </Components.AlertModal>
+                {options.time && (
+                    <TemplateComponents.DateTime
+                        mode={'time'}
+                        isVisible={options.time}
+                        handleConfirm={handleConfirm}
+                        hideDatePicker={closeModal}
+                    />
+                )}
             </SafeAreaView>
         </>
     )

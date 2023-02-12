@@ -15,7 +15,7 @@ function Heading2({title}) {
 }
 
 function Heading4({ title }) {
- return(<View><Text style={[styles.heading4, { fontWeight:'400'}]}>{title}</Text></View>)
+ return(<Text style={[styles.heading4, { fontWeight:'400'}]}>{title}</Text>)
     
 }
 

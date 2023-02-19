@@ -15,7 +15,7 @@ function Heading2({title}) {
 }
 
 function Heading4({ title }) {
- return(<Text style={[styles.heading4, { fontWeight:'400'}]}>{title}</Text>)
+ return(<Text style={[styles.heading4, { fontWeight:'bold'}]}>{title}</Text>)
     
 }
 
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
       color: '#000',
     },
     heading4:{
-        fontSize:12,
+        fontSize:13,
         color: '#000'
       },
     heading2:{

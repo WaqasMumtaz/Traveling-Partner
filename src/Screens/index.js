@@ -27,6 +27,8 @@ import PartnerDetail from "./PoolRide/Partner/PartnerDetail";
 import PartnerPickLocation from "./PoolRide/Partner/PickLocation";
 import FoundRide from "./PoolRide/Partner/FoundRide";
 import ActiveRide from "./ActiveRide";
+import Chat from "./Chat";
+import Help from "./Help";
 
 export default {
     AcceptRide,
@@ -57,5 +59,7 @@ export default {
     PartnerDetail,
     PartnerPickLocation,
     FoundRide,
-    ActiveRide
+    ActiveRide,
+    Chat,
+    Help
 }

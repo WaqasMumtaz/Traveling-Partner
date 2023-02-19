@@ -18,6 +18,8 @@ function MainNavigation() {
         headerShown: false
       }}
       >
+        <Stack.Screen name='Help' component={Screens.Help} />
+        <Stack.Screen name='Chat' component={Screens.Chat} />
         <Stack.Screen name='Active Ride' component={Screens.ActiveRide}/>
         <Stack.Screen name="Slider" component={ScreensSwiper} />
         <Stack.Screen name="Enable Location" component={Screens.EnableLocation} />

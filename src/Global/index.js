@@ -19,5 +19,6 @@ export default {
     brown_clr:"#F1D4B6",
     light_red:'#EB1933',
     video_url:"https://vjs.zencdn.net/v/oceans.mp4",
-    green:"#33CE5D"
+    green:"#33CE5D",
+    shadowColor: '#171717',
 }

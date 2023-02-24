@@ -2,25 +2,17 @@
 import React, { useEffect } from 'react';
 import {
   SafeAreaView,
-  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
   useColorScheme,
   View,
 } from 'react-native';
-
 import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
+  Colors
 } from 'react-native/Libraries/NewAppScreen';
 
 import SplashScreen from 'react-native-splash-screen';
-import Components from './src/Components';
-import Screens from './src/Screens';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import Global from './src/Global';
 import MainNavigation from './src/Navigation';

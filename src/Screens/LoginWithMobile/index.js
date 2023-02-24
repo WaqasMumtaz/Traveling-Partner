@@ -33,9 +33,10 @@ export default function SignUpWithMobile() {
                     contentContainerStyle={{
                         alignItems: 'center'
                     }}
+
                 >
                     <Components.Heading3
-                        title={'SignUp with Number'}
+                        title={'Login with Number'}
                     />
                     <Components.InputText
                         placeholder="Phone Number"
@@ -59,9 +60,9 @@ export default function SignUpWithMobile() {
                         btn_container_style={styles.btn_container_style}
                     />
                     <View style={{ marginTop: 30, flexDirection: 'row', alignItems: 'center' }}>
-                        <Text>Already have an account?</Text>
-                        <TouchableOpacity onPress={() => navigation.goBack()}>
-                            <Text style={{ marginLeft: 5, fontSize: 16, fontWeight: '600', textDecorationLine: "underline" }}>Login</Text>
+                        <Text>Can't have an account?</Text>
+                        <TouchableOpacity onPress={() => navigation.navigate('SingUp')}>
+                            <Text style={{ marginLeft: 5, fontSize: 16, fontWeight: '600', textDecorationLine: "underline" }}>Sing Up</Text>
                         </TouchableOpacity>
                     </View>
                 </KeyboardAwareScrollView>
@@ -69,6 +70,7 @@ export default function SignUpWithMobile() {
         </>
     )
 }
+
 
 const styles = StyleSheet.create({
     container: {

@@ -30,6 +30,7 @@ import FoundRide from "./PoolRide/Partner/FoundRide";
 import ActiveRide from "./ActiveRide";
 import Chat from "./Chat";
 import Help from "./Help";
+import ProfileScreen from './Profile';
 
 export default {
     AcceptRide,
@@ -63,5 +64,6 @@ export default {
     FoundRide,
     ActiveRide,
     Chat,
-    Help
+    Help,
+    ProfileScreen
 }

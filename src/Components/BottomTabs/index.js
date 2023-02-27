@@ -23,8 +23,13 @@ const BottomTabs = ({ handleNavigation }) => {
     function navigateHome() {
         console.log('Navigation Detail >>>', navigation);
         navigation.dispatch(
-            StackActions.replace('Home', {routeName:null})
+            StackActions.replace('Home', { routeName: null })
         );
+    }
+    function navigateProfile() {
+        navigation.dispatch(
+            StackActions.replace('ProfileScreen', { routeName: null })
+        )
     }
 
     return (
@@ -57,7 +62,11 @@ const BottomTabs = ({ handleNavigation }) => {
                     <Image source={activity} style={styles.icons} resizeMode='contain' />
                     <Text style={styles.title}>Activity</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.form}>
+                <TouchableOpacity
+                    style={styles.form}
+                    onPress={() => navigateProfile()}
+                    disabled={route.name === 'ProfileScreen' ? true : false}
+                >
                     <Image source={user} style={styles.icons} resizeMode='contain' />
                     <Text style={styles.title}>Profile</Text>
                 </TouchableOpacity>

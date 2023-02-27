@@ -1,47 +1,18 @@
-
 import React, { useEffect } from 'react';
 import {
   SafeAreaView,
   StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
+  StyleSheet
 } from 'react-native';
-import {
-  Colors
-} from 'react-native/Libraries/NewAppScreen';
-
 import SplashScreen from 'react-native-splash-screen';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import Global from './src/Global';
 import MainNavigation from './src/Navigation';
+import { Provider } from "react-redux";
+import axios from "axios";
+import { store } from "./src/redux/index";
 
-const Section = ({ children, title }) => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
+axios.defaults.baseURL = "http://localhost:4000/api";
 
 const MyTheme = {
   ...DefaultTheme,
@@ -59,14 +30,14 @@ const App = () => {
 
   return (
     <>
-      <StatusBar barStyle='dark-content' backgroundColor='#fff' />
-      <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
-        <NavigationContainer theme={MyTheme}>
-          <MainNavigation />
-          {/* <PartnerBasicInfo/> */}
-          {/* <DriverRidesDetail/> */}
-        </NavigationContainer>
-      </SafeAreaView>
+      <Provider store={store}>
+          <StatusBar barStyle='dark-content' backgroundColor='#fff' />
+          <SafeAreaView style={{ flex: 1, backgroundColor: Global.white }}>
+            <NavigationContainer theme={MyTheme}>
+              <MainNavigation />
+            </NavigationContainer>
+          </SafeAreaView>
+      </Provider>
     </>
   );
 };

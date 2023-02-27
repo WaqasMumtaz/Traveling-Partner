@@ -35,7 +35,7 @@ export default function SignUpWithMobile() {
                     }}
                 >
                     <Components.Heading3
-                        title={'SignUp with Number'}
+                        title={'Register with Number'}
                     />
                     <Components.InputText
                         placeholder="Phone Number"

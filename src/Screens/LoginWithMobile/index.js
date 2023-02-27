@@ -4,10 +4,14 @@ import Components from '../../Components';
 import Global from '../../Global';
 import { useNavigation } from '@react-navigation/native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { useDispatch, useSelector } from "react-redux";
 
 
 export default function SignUpWithMobile() {
     let navigation = useNavigation();
+    const permissions = useSelector((state) => state);
+    console.log(permissions, 'permissions')
+
     const [authObj, setAuthObj] = useState({
         phone_number: ''
     })
@@ -62,7 +66,7 @@ export default function SignUpWithMobile() {
                     <View style={{ marginTop: 30, flexDirection: 'row', alignItems: 'center' }}>
                         <Text>Can't have an account?</Text>
                         <TouchableOpacity onPress={() => navigation.navigate('SingUp')}>
-                            <Text style={{ marginLeft: 5, fontSize: 16, fontWeight: '600', textDecorationLine: "underline" }}>Sing Up</Text>
+                            <Text style={{ marginLeft: 5, fontSize: 16, fontWeight: '600', textDecorationLine: "underline" }}>Register</Text>
                         </TouchableOpacity>
                     </View>
                 </KeyboardAwareScrollView>

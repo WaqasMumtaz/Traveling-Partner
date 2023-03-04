@@ -31,6 +31,7 @@ import LocationDetail from "./LocationDetail";
 import DataInfo from "./OfflineOnline";
 import VechileMeterInfo from "./VechileMeterInfo";
 import Icon from "./Icon";
+import List from "./ArrowList";
 
 export default {
     ScreensSwiper,
@@ -68,5 +69,6 @@ export default {
     LocationDetail,
     DataInfo,
     VechileMeterInfo,
-    Icon
+    Icon,
+    List
 }

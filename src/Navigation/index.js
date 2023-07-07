@@ -18,17 +18,19 @@ function MainNavigation() {
         headerShown: false
       }}
       >
+        <Stack.Screen name="Slider" component={ScreensSwiper} />
         <Stack.Screen name='Help' component={Screens.Help} />
         <Stack.Screen name='Chat' component={Screens.Chat} />
         <Stack.Screen name='Active Ride' component={Screens.ActiveRide}/>
-        <Stack.Screen name="Slider" component={ScreensSwiper} />
         <Stack.Screen name="Enable Location" component={Screens.EnableLocation} />
         <Stack.Screen name="Driver Introduction" component={Screens.DriverIntroduction} />
         <Stack.Screen name="Partner Introduction" component={Screens.PartnerIntroduction} />
         <Stack.Screen name="SignUp" component={Screens.SignUp} />
         <Stack.Screen name='Driver Info' component={Screens.DriverBasicInfo}/>
         <Stack.Screen name='Partner Info' component={Screens.PartnerBasicInfo}/>
-        <Stack.Screen name='Mobile Phone' component={Screens.SignUpWithMobile}/>
+        <Stack.Screen name='Login' component={Screens.LoginWithMobile}/>
+        <Stack.Screen name='SingUp' component={Screens.SignUpWithMobile}/>
+
         <Stack.Screen name='OTP Screen' component={Screens.OTPScreen}/>
         <Stack.Screen name='Home' component={Screens.Home}/>
         <Stack.Screen name='TaxiStand' component={Screens.TaxiStand} />

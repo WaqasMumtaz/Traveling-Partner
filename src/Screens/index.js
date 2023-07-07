@@ -7,6 +7,7 @@ import PartnerIntroduction from "./PartnerIntroduction";
 import SignUp from './Auth';
 import DriverBasicInfo from "./DriverBasicInfo";
 import PartnerBasicInfo from "./PartnerBasicInfo";
+import LoginWithMobile from "./LoginWithMobile";
 import SignUpWithMobile from "./SignUpWithMobile";
 import OTPScreen from './OTPScreen';
 import Home from "./Home";
@@ -41,6 +42,7 @@ export default {
     SignUp,
     DriverBasicInfo,
     PartnerBasicInfo,
+    LoginWithMobile,
     SignUpWithMobile,
     OTPScreen,
     Home,

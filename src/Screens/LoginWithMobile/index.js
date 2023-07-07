@@ -4,10 +4,14 @@ import Components from '../../Components';
 import Global from '../../Global';
 import { useNavigation } from '@react-navigation/native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { useDispatch, useSelector } from "react-redux";
 
 
 export default function SignUpWithMobile() {
     let navigation = useNavigation();
+    const permissions = useSelector((state) => state);
+    console.log(permissions, 'permissions')
+
     const [authObj, setAuthObj] = useState({
         phone_number: ''
     })
@@ -33,9 +37,10 @@ export default function SignUpWithMobile() {
                     contentContainerStyle={{
                         alignItems: 'center'
                     }}
+
                 >
                     <Components.Heading3
-                        title={'Register with Number'}
+                        title={'Login with Number'}
                     />
                     <Components.InputText
                         placeholder="Phone Number"
@@ -59,9 +64,9 @@ export default function SignUpWithMobile() {
                         btn_container_style={styles.btn_container_style}
                     />
                     <View style={{ marginTop: 30, flexDirection: 'row', alignItems: 'center' }}>
-                        <Text>Already have an account?</Text>
-                        <TouchableOpacity onPress={() => navigation.goBack()}>
-                            <Text style={{ marginLeft: 5, fontSize: 16, fontWeight: '600', textDecorationLine: "underline" }}>Login</Text>
+                        <Text>Can't have an account?</Text>
+                        <TouchableOpacity onPress={() => navigation.navigate('SingUp')}>
+                            <Text style={{ marginLeft: 5, fontSize: 16, fontWeight: '600', textDecorationLine: "underline" }}>Register</Text>
                         </TouchableOpacity>
                     </View>
                 </KeyboardAwareScrollView>
@@ -69,6 +74,7 @@ export default function SignUpWithMobile() {
         </>
     )
 }
+
 
 const styles = StyleSheet.create({
     container: {

@@ -13,7 +13,7 @@ function DriverIntroduction() {
 
     const handleNavigation = () => {
         //navigation.navigate('SignUp');
-        navigation.navigate('Mobile Phone')
+        navigation.navigate('Partner Introduction')
 
     }
 
